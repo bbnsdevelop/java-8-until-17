@@ -15,5 +15,24 @@ public class TypesPrimitive {
         System.out.println("Integer minimum value = " + minIntValue);
         System.out.println("Integer maximum value = " + maxIntValue);
 
+
+        byte bMinValue = Byte.MIN_VALUE;
+        byte bMaxValue = Byte.MAX_VALUE;
+
+        System.out.println(bMinValue);
+        System.out.println(bMaxValue);
+        
+        short minShort = Short.MIN_VALUE;
+        short maxShort = Short.MAX_VALUE;
+
+
+        long minLong = Long.MIN_VALUE;
+        long maxLong = Long.MAX_VALUE;
+
+        System.out.println(minShort);
+        System.out.println(maxShort);
+        System.out.println(minLong);
+        System.out.println(maxLong);
+
     }
 }
