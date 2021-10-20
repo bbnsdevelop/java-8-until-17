@@ -1,9 +1,7 @@
 package br.com.bbnsdevelop.oop.entities;
 
-public class Venue {
+public class Venue extends EventBase{
 	
-	public Long id;
-	public String name;
 	public String description;
 	public String streetAddress;
 	public String city;

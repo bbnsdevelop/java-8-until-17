@@ -1,9 +1,7 @@
 package br.com.bbnsdevelop.oop.entities;
 
-public class Organizer {
+public class Organizer extends EventBase {
 
-	public Long id;
-	public String name;
-		
+	
 
 }
