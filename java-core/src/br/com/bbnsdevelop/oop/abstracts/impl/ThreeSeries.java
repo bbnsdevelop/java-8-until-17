@@ -7,7 +7,7 @@ public class ThreeSeries extends BMW{
 	
 	@Override
 	public void accelerate() {
-
+		System.out.println("test");
 	}
 
 }
