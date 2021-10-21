@@ -6,6 +6,6 @@ public abstract class BMW {
 		System.out.println("Inside commonFunc method");
 	}
 	
-	abstract void accelerate();
+	public abstract void accelerate();
 
 }
