@@ -19,4 +19,16 @@ public class Employee {
 		System.out.println("Common work for everyone");
 	}
 
+
+	@Override
+	public String toString() {
+		return "Employee: id: " + id + ", name: " + name + ", dept: " + dept + ", salary: " + salary;
+	}
+	
+	public void showInfo() {
+		System.out.println(toString());
+	}
+	
+	
+
 }
