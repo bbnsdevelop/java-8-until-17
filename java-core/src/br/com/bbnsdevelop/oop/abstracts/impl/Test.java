@@ -1,7 +1,4 @@
-package br.com.bbnsdevelop.oop.abstracts.test;
-
-import br.com.bbnsdevelop.oop.abstracts.impl.FiveSeries;
-import br.com.bbnsdevelop.oop.abstracts.impl.ThreeSeries;
+package br.com.bbnsdevelop.oop.abstracts.impl;
 
 public class Test {
 
