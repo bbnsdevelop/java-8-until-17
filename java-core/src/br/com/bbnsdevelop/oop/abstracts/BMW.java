@@ -7,5 +7,7 @@ public abstract class BMW {
 	}
 	
 	public abstract void accelerate();
+	
+	public abstract void stop();
 
 }
