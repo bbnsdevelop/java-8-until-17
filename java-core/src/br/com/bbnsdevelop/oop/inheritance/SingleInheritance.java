@@ -1,6 +1,6 @@
 package br.com.bbnsdevelop.oop.inheritance;
 
-public class SingleInheritance {
+public class SingleInheritance { //<-- here extends implicit the class Object
 	
 	
 	void method1() {
