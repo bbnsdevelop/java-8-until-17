@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.oop.inheritance;
+package br.com.bbnsdevelop.oop.inheritance.parents;
 
 public class Parent {
 	
