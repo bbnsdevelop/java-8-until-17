@@ -3,12 +3,12 @@ package br.com.bbnsdevelop.oop.polymorphism.mac;
 public class MACBookAir extends MACBook {
 	
 	@Override
-	void start() {
+	public void start() {
 		System.out.println("Inside MACBookAir");
 	}
 	
 	@Override
-	void shutdown() {
+	public void shutdown() {
 		System.out.println("Inside MACBookAir");
 	}
 

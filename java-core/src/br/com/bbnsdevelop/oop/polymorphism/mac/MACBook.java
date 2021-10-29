@@ -1,13 +1,18 @@
 package br.com.bbnsdevelop.oop.polymorphism.mac;
 
-public class MACBook {
+import br.com.bbnsdevelop.oop.polymorphism.interfaces.AppleLaptop;
+
+public abstract class MACBook implements AppleLaptop {
 	
-	void start() {
+	@Override
+	public void start() {
 		System.out.println("Inside macbook method start");
 	}
 	
-	void shutdown() {
+	@Override
+	public void shutdown() {
 		System.out.println("Inside macbook method shutdown");
 	}
+	
 
 }
