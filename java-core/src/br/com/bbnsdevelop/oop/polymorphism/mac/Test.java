@@ -8,6 +8,7 @@ public class Test {
 		
 		m1.start();
 		m1.shutdown();
+		m1.screen();
 		
 		
 		m2.start();

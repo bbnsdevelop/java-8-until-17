@@ -14,5 +14,9 @@ public abstract class MACBook implements AppleLaptop {
 		System.out.println("Inside macbook method shutdown");
 	}
 	
+	public void screen() {
+		System.out.println("show screen");
+	}
+	
 
 }
