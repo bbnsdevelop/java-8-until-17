@@ -6,6 +6,8 @@ public class JoinDemo extends Thread{
 	static int n, sum = 0;
 
 	public static void main(String[] args) {
+		long start = System.currentTimeMillis();
+		
 		System.out.println("Sum of first 'N' numbers");
 
 		Scanner scan = new Scanner(System.in);
@@ -20,6 +22,11 @@ public class JoinDemo extends Thread{
 		}
 		
 		System.out.println("Sum of first "+ JoinDemo.n+" Numbers is "+JoinDemo.sum);
+		long finish = System.currentTimeMillis();
+		
+		long result = (finish - start) / 1000;
+		
+		System.out.println("The total time taken is: "+ result+" Seconds");
 	}
 	
 	@Override
