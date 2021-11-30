@@ -1,8 +1,8 @@
-package br.com.bbnsdevelop.threads.sync;
+package br.com.bbnsdevelop.threads.sync.classlock;
 
 public class DisplayMessage {
 	
-	public synchronized void sayHello(String name) {
+	public synchronized static void sayHello(String name) {
 		for (int i = 0; i <= 10; i++) {
 			System.out.println("How are you ".concat(name).concat("?"));
 			try {
