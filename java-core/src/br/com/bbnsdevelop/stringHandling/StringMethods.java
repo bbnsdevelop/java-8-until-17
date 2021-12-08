@@ -27,6 +27,9 @@ public class StringMethods {
 		s = s.replace(" ", "-");
 		System.out.println(s);
 		
+		System.out.println(s.toUpperCase());
+		System.out.println(s.toLowerCase());
+		
 	}
 
 }
