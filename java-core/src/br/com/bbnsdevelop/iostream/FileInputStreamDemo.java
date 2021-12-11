@@ -11,7 +11,7 @@ public class FileInputStreamDemo {
 
 		FileInputStream fis = null;
 		try {
-			fis = new FileInputStream(new File("/media/b2/file_storage/_trabalho/projetos/java-11-until-17/file.txt"));
+			fis = new FileInputStream(new File("/media/b2/file_storage/_trabalho/projetos/java-11-until-17/files-to-teste/file.txt"));
 
 			System.out.println("File opened");
 			int i;
