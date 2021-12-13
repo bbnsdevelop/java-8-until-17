@@ -17,7 +17,7 @@ public class StringTokenizerDemo {
 		
 		String s1 = "You,are,the,creator,of,your,desttiny";
 		System.out.println("*-------------------------------*");
-		StringTokenizer st1 = new StringTokenizer(s1, ",");
+		StringTokenizer st1 = new StringTokenizer(s1, ",", false);
 		
 		while (st1.hasMoreTokens()) {
 			System.out.println(st1.nextToken());
