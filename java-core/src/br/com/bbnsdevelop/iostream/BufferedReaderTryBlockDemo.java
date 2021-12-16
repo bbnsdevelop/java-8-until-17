@@ -11,9 +11,10 @@ public class BufferedReaderTryBlockDemo {
 
 		int count = 0;
 
-		try (FileReader fr = new FileReader(
-				"/media/b2/file_storage/_trabalho/projetos/java-11-until-17/files-to-teste/file.txt");
-				BufferedReader br = new BufferedReader(fr);) 
+		try (
+				FileReader fr = new FileReader("/media/b2/file_storage/_trabalho/projetos/java-11-until-17/files-to-teste/file.txt");
+				BufferedReader br = new BufferedReader(fr);
+			) 
 		{
 
 			String line;
