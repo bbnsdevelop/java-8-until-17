@@ -24,6 +24,11 @@ public class ArraysDemo {
 			int element = array2[i];
 			System.out.println(element);
 		}
+		
+		System.out.println("------------for-each---------------------");		
+		for(int element: array1) {
+			System.out.println(element);
+		}
 	}
 
 }
