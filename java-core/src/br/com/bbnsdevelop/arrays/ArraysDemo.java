@@ -21,7 +21,7 @@ public class ArraysDemo {
 		array2[1] = 2;
 		array2[2] = 3;
 		array2[3] = 4;
-		array2[4] = 5;
+		array2[4] = Integer.valueOf(5); //  Autoboxing
 		
 		for (int i = 0; i < array2.length; i++) {
 			int element = array2[i];
