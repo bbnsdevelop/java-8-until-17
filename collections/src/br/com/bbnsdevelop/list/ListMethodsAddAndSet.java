@@ -3,7 +3,7 @@ package br.com.bbnsdevelop.list;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListMethods {
+public class ListMethodsAddAndSet {
 	
 	public static void main(String[] args) {
 		
