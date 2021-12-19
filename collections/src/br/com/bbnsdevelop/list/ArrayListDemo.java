@@ -24,5 +24,18 @@ public class ArrayListDemo {
 			}
 
 		}
+		System.out.println();
+		// restrict the type of value
+		System.out.println("restrict the type of value");
+		ArrayList<Integer> list1 = new ArrayList<>();
+		list1.add(Integer.valueOf(20));
+		list1.add(10); // Autoboxing
+		// list1.add(30.45);
+		// list1.add("Hello");
+		
+		
+		for(Integer element: list1) {
+			System.out.println(element);
+		}
 	}
 }
