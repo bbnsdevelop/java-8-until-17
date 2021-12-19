@@ -3,7 +3,7 @@ package br.com.bbnsdevelop.list;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListMethodsAddAll {
+public class ListMethodsContains {
 	
 	public static void main(String[] args) {
 		
@@ -31,12 +31,6 @@ public class ListMethodsAddAll {
 		list.addAll(4, secondList);
 		
 		System.out.println("List after add all: " + list);
-		
-		
-		
-		if(list.contains(10)) {
-			System.out.println("List has the values");
-		}
 	}
 
 }
