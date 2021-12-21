@@ -3,7 +3,7 @@ package br.com.bbnsdevelop.set;
 import java.util.Set;
 import java.util.TreeSet;
 
-import comparator.StringBufferComparator;
+import br.com.bbnsdevelop.comparator.StringBufferComparator;
 
 public class CustomizeStringBufferComparableDemo {
 	

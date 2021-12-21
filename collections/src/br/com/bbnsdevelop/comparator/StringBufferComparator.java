@@ -1,4 +1,4 @@
-package comparator;
+package br.com.bbnsdevelop.comparator;
 
 import java.util.Comparator;
 
