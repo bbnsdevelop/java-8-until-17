@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class ArrayListIteratorDemo {
+public class IteratorDemo {
 	
 	public static void main(String[] args) {
 		
@@ -13,8 +13,7 @@ public class ArrayListIteratorDemo {
 		Iterator<Integer> itr = list.iterator();
 		
 		while(itr.hasNext()) {
-			System.out.println(itr.next());
-			
+			System.out.println(itr.next());			
 		}	
 		
 	}
