@@ -3,12 +3,13 @@ package br.com.bbnsdevelop.set;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class StringBufferTreeSet {
+import comparator.StringBufferComparator;
 
+public class CustomizeStringBufferComparableDemo {
+	
 	public static void main(String[] args) {
-
-		Set<StringBuffer> set = new TreeSet<>();
-
+		Set<StringBuffer> set = new TreeSet<>(new StringBufferComparator());
+		
 		set.add(new StringBuffer("abc"));
 		set.add(new StringBuffer("xyz"));
 		set.add(new StringBuffer("def"));
@@ -20,10 +21,7 @@ public class StringBufferTreeSet {
 		for (StringBuffer element : set) {
 			System.out.println(element);
 		}
-
-		System.out.println("If you use the java version 12 plus this code is done");
-		System.out.println("Other versions throw exception-------> StringBuffer cannot be cast to java.lang.Comparable");
-
+		
 	}
 
 }
