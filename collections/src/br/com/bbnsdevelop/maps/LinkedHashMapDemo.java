@@ -1,14 +1,14 @@
 package br.com.bbnsdevelop.maps;
 
 import java.util.Collection;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class HashMapDemo {
+public class LinkedHashMapDemo {
 
 	public static void main(String[] args) {
-		Map<Integer, String> map = new LinkedHashMap<>();
+		Map<Integer, String> map = new HashMap<>();
 		
 		map.put(1, "Jhon");
 		map.put(1, "Jhon");
