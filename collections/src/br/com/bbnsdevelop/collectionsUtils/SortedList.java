@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.utils;
+package br.com.bbnsdevelop.collectionsUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
