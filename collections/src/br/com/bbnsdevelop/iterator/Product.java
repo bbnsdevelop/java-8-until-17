@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.list.iterator;
+package br.com.bbnsdevelop.iterator;
 
 public class Product implements Comparable<Product>{
 

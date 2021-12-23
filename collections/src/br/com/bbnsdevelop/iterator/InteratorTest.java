@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.list.iterator;
+package br.com.bbnsdevelop.iterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
