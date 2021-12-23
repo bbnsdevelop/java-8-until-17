@@ -585,7 +585,7 @@ Some of the important Java 8 features are;
     
 * forEach()   
     
-```
+```ruby
  
 public class Java8ForEachExample {
  
