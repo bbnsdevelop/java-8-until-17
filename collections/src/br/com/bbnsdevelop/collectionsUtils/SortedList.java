@@ -29,5 +29,12 @@ public class SortedList {
 		
 		System.out.println("After sorting: " + l);
 		
+		
+		int binarySearch = Collections.binarySearch(l, "A");
+		
+		System.out.println(binarySearch);
+		
+		System.out.println(l.get(binarySearch));
+		
 	}
 }
