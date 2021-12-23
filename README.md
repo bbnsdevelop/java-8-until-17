@@ -560,3 +560,39 @@ Relaxed strong encapsulation (--illegal-access=permit) is the default in JDK 9 -
 
 
 * JDK 8 was released in 2014. We had to wait for three and a half years for JDK 9. But since then things accelerated. Java has a new release structure that aims to deliver a new version in every six months. While Java 8 is still supported, migrating to the latest version brings considerable amount of improvements to the table.
+
+# JDK 8
+![image](https://user-images.githubusercontent.com/36892558/147246397-b5edef6b-c93c-4d7b-a079-3c92edf40877.png)
+
+# Quick Overview of Java 8 Features
+    
+Some of the important Java 8 features are;
+* forEach() method in Iterable interface
+* default and static methods in Interfaces
+* Functional Interfaces and Lambda Expressions
+* Java Stream API for Bulk Data Operations on Collections
+* Java Time API
+* Collection API improvements
+* Concurrency API improvements
+* Java IO improvements
+    
+    
+ Let’s have a brief look on these Java 8 features. I will provide some code snippets for better understanding the features in a simple way.
+ 
+    
+* forEach()   
+    
+```
+ 
+public class Java8ForEachExample {
+ 
+    public static void main(String[] args) {         
+
+        List<Integer> myList = new ArrayList<Integer>();
+        myList.add(10);
+        myList.forEach(number -> System.out.println(number));
+         
+    } 
+} 
+
+```
