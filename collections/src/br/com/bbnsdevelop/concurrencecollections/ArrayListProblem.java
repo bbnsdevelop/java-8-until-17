@@ -4,11 +4,28 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class ArrayListProblem {
+public class ArrayListProblem extends Thread{
+	
+	static CopyOnWriteArrayList<String> courses1 = new CopyOnWriteArrayList<String>();
+	
+	@Override
+	public void run() {
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		courses1.add("Terraform");
+	}
 
 	public static void main(String[] args) {
 
-		ArrayList<String> courses = new ArrayList<String>();
+		ArrayListProblem a = new ArrayListProblem();
+		a.start();
+		
+		
+		ArrayList<String> courses = new ArrayList<String>();	
 
 		courses.add("Java");
 		courses.add("Python");
@@ -33,7 +50,7 @@ public class ArrayListProblem {
 			}
 		}
 		System.out.println("----------------------------");
-		CopyOnWriteArrayList<String> courses1 = new CopyOnWriteArrayList<String>();
+		
 
 		courses1.add("Java");
 		courses1.add("Python");
@@ -47,6 +64,11 @@ public class ArrayListProblem {
 		Iterator<String> iterator1 = courses1.iterator();
 		courses1.add("NodeJs");
 		while (iterator1.hasNext()) {
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			String course = iterator1.next();
 			System.out.println(course);
 			
