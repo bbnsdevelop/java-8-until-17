@@ -14,7 +14,9 @@ public class PaymentTest {
 		PaymentType[] values = PaymentType.values();
 		
 		for (PaymentType paymentType : values) {
-			System.out.println(paymentType);			
+			System.out.println(paymentType);
+			
+			System.out.println(paymentType.ordinal());
 		}
 	}
 
