@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.functionalInterface;
+package br.com.bbnsdevelop.functionalInterface.basics;
 
 @FunctionalInterface
 public interface FuncInterface {

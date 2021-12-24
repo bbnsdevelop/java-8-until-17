@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.functionalInterface;
+package br.com.bbnsdevelop.functionalInterface.basics;
 
 public class OldWayToImplementationInterface implements FuncInterface{
 
