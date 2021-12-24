@@ -7,7 +7,8 @@ public class SimpleCalculatorTest {
 		System.out.println("addition is: " + c.calc(8, 5));
 				
 		c = (a, b) -> a - b;		
-		System.out.println("subtraction is: " + c.calc(100, 5));
+		int result = c.calc(100, 5);
+		System.out.println("subtraction is: " + result);
 		
 		
 		c = (a, b) -> a * b;		
