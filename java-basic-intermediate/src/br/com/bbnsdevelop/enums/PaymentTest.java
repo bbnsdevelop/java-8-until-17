@@ -8,6 +8,14 @@ public class PaymentTest {
 		PaymentType pt = PaymentType.CREDITCARD;
 		
 		System.out.println(pt);
+		
+		System.out.println("---------------Enum-methods-----------------");
+		
+		PaymentType[] values = PaymentType.values();
+		
+		for (PaymentType paymentType : values) {
+			System.out.println(paymentType);			
+		}
 	}
 
 }
