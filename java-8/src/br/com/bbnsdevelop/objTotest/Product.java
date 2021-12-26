@@ -22,6 +22,9 @@ public class Product {
 		this.category = category;
 	}
 
+	public static void display(Product p) {
+		System.out.println(p);
+	}
 
 	@Override
 	public String toString() {
