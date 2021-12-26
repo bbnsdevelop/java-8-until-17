@@ -53,5 +53,9 @@ public class ProductService {
 		return this.products.stream().filter(p).collect(Collectors.toList());
 
 	}
+	
+	public static void displayProduct(Product p) {
+		System.out.println(p);
+	}
 
 }

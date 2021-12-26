@@ -13,6 +13,12 @@ public class MethodRefDemo {
 		System.out.println("--------------Reference ::   -----------------------");
 		service.getProducts().forEach(Product::display);
 		
+		
+		System.out.println("---------Service-----Reference ::   -----------------------");
+		service.getProducts().forEach(ProductService::displayProduct);
+		
+		
+		
 	}
 
 }
