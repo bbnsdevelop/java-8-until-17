@@ -53,9 +53,18 @@ public class ProductService {
 		return this.products.stream().filter(p).collect(Collectors.toList());
 
 	}
-	
-	public static void displayProduct(Product p) {
-		System.out.println(p);
+
+	public static void updateValueIfCategoryIsSmartPhone(Product p) {
+		ProductService s = new ProductService();
+		if(s.checkCategory(p, CategoryTypes.SMARTPHONE)) {
+			Double newValue = p.getPrice() + (p.getPrice() * 10 ) / 100;
+			p.setPrice(newValue);
+		}
+
 	}
 
+	private Boolean checkCategory(Product p, CategoryTypes c) {
+		Predicate<Product> predicate = produ -> produ.getCategory().equals(c);
+		return predicate.test(p);
+	}
 }
