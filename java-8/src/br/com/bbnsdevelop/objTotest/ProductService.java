@@ -2,16 +2,18 @@ package br.com.bbnsdevelop.objTotest;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class ProductService {
 
 	private List<Product> products;
 
-	ProductService() {
+	public ProductService() {
 		this.products = instanceProducts();
 	}
 
-	private List<Product> instanceProducts() {		
+	private List<Product> instanceProducts() {
 
 		return Arrays.asList(new Product(1, "TV", 1299.99, 15, CategoryTypes.HOMEAPPLIANCE),
 				new Product(2, "Laptop Core i3", 2899.99, 10, CategoryTypes.COMPUTING),
@@ -31,9 +33,25 @@ public class ProductService {
 
 		);
 	}
-	
-	public List<Product> getProducts(){
+
+	public List<Product> getProducts() {
 		return products;
+	}
+
+	public List<Product> listProductQuantityGreaterThan10() {
+
+		Predicate<Product> p = produ -> produ.getQuantity() > 15;
+
+		return this.products.stream().filter(p).collect(Collectors.toList());
+
+	}
+
+	public List<Product> listProductCategoryComputing() {
+
+		Predicate<Product> p = produ -> produ.getCategory().equals(CategoryTypes.COMPUTING);
+
+		return this.products.stream().filter(p).collect(Collectors.toList());
+
 	}
 
 }
