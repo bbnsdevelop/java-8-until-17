@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.interfaces.predicates;
+package br.com.bbnsdevelop.interfaces.predicates.joins;
 
 import java.util.Arrays;
 import java.util.List;
