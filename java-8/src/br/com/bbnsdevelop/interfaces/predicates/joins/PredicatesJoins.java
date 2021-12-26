@@ -24,6 +24,10 @@ public class PredicatesJoins {
 		
 		System.out.println("Greater than 10 AND Even: ");
 		methodWithPredicateParam(p1.and(p2), x);
+		
+		
+		System.out.println("Greater than 10 OR Even: ");
+		methodWithPredicateParam(p1.or(p2), x);
 	
 	}
 	
