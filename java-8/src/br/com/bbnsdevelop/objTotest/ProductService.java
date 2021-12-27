@@ -28,7 +28,7 @@ public class ProductService {
 				new Product(8, "TV 80", 5299.99, 15, CategoryTypes.HOMEAPPLIANCE),
 				new Product(9, "Mouse", 49.99, 10, CategoryTypes.COMPUTING),
 				new Product(10, "Monitor 27' ", 1299.99, 15, CategoryTypes.COMPUTING),
-				new Product(11, "Tablet", 1299.99, 15, CategoryTypes.COMPUTING),
+				new Product(11, "Tablet", 1299.99, 16, CategoryTypes.COMPUTING),
 				new Product(12, "Refrigerator", 2299.99, 15, CategoryTypes.HOMEAPPLIANCE),
 				new Product(13, "Microwave", 1499.99, 15, CategoryTypes.HOMEAPPLIANCE),
 				new Product(14, "Stove", 1299.99, 15, CategoryTypes.HOMEAPPLIANCE),
@@ -79,6 +79,14 @@ public class ProductService {
 		Predicate<Product> p = produ -> produ.getCategory().equals(CategoryTypes.COMPUTING);
 
 		return this.products.stream().filter(p).collect(Collectors.toList());
+
+	}
+	
+	public List<Product> listProductCategoryComputing(List<Product> list) {
+
+		Predicate<Product> p = produ -> produ.getCategory().equals(CategoryTypes.COMPUTING);
+
+		return list.stream().filter(p).collect(Collectors.toList());
 
 	}
 
