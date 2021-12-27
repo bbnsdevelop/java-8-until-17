@@ -16,6 +16,17 @@ public class TestInterface {
 		f.showProduct(service.getProducts().get(3));		
 		f = p -> System.out.println(service.getProducts().get(3));		
 		f.showProduct(service.getProducts().get(3));
+		
+		
+		f = service::updateValue;
+		f.showProduct(service.getProducts().get(4));
+		
+		f = p -> System.out.println(service.getProducts().get(4));		
+		f.showProduct(service.getProducts().get(4));
 	}
+	
+	
+	
+	
 
 }
