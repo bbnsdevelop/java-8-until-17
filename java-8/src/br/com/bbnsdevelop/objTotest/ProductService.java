@@ -7,6 +7,10 @@ import java.util.stream.Collectors;
 
 public class ProductService {
 
+	private static final int PERCENTAGE_15 = 15;
+	private static final int PERCENTAGE_10 = 10;
+	
+	
 	private List<Product> products;
 
 	public ProductService() {
@@ -64,10 +68,19 @@ public class ProductService {
 	}
 	
 	
+	public Product updateValueIfCategoryIsHomeAppliance(Product p ) {
+		if(checkCategory(p, CategoryTypes.HOMEAPPLIANCE)) {
+			Double newValue = p.getPrice() + (p.getPrice() * PERCENTAGE_15 ) / 100;
+			p.setPrice(newValue);
+		}
+		return p;
+	}
+	
+	
 	public void updateValue(Product p) {
 		ProductService s = new ProductService();
 		if(s.checkCategory(p, CategoryTypes.SMARTPHONE)) {
-			Double newValue = p.getPrice() + (p.getPrice() * 10 ) / 100;
+			Double newValue = p.getPrice() + (p.getPrice() * PERCENTAGE_10 ) / 100;
 			p.setPrice(newValue);
 		}
 
