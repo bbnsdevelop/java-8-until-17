@@ -9,8 +9,7 @@ public class ProductService {
 
 	private static final int PERCENTAGE_15 = 15;
 	private static final int PERCENTAGE_10 = 10;
-	
-	
+
 	private List<Product> products;
 
 	public ProductService() {
@@ -38,8 +37,33 @@ public class ProductService {
 		);
 	}
 
+	private List<ProductComparable> instanceProductComparable() {
+
+		return Arrays.asList(new ProductComparable(1, "TV", 1299.99, 15, CategoryTypes.HOMEAPPLIANCE),
+				new ProductComparable(2, "Laptop Core i3", 2899.99, 10, CategoryTypes.COMPUTING),
+				new ProductComparable(3, "Laptop Core i7", 4299.99, 5, CategoryTypes.COMPUTING),
+				new ProductComparable(4, "Iphone 12", 1299.99, 25, CategoryTypes.SMARTPHONE),
+				new ProductComparable(5, "Sansung Galaxy", 1199.99, 150, CategoryTypes.SMARTPHONE),
+				new ProductComparable(6, "TV 40", 1299.99, 15, CategoryTypes.HOMEAPPLIANCE),
+				new ProductComparable(7, "TV 60", 3299.99, 15, CategoryTypes.HOMEAPPLIANCE),
+				new ProductComparable(8, "TV 80", 5299.99, 15, CategoryTypes.HOMEAPPLIANCE),
+				new ProductComparable(9, "Mouse", 49.99, 10, CategoryTypes.COMPUTING),
+				new ProductComparable(10, "Monitor 27' ", 1299.99, 15, CategoryTypes.COMPUTING),
+				new ProductComparable(11, "Tablet", 1299.99, 15, CategoryTypes.COMPUTING),
+				new ProductComparable(12, "Refrigerator", 2299.99, 15, CategoryTypes.HOMEAPPLIANCE),
+				new ProductComparable(13, "Microwave", 1499.99, 15, CategoryTypes.HOMEAPPLIANCE),
+				new ProductComparable(14, "Stove", 1299.99, 15, CategoryTypes.HOMEAPPLIANCE),
+				new ProductComparable(15, "Washing machine", 3299.99, 15, CategoryTypes.HOMEAPPLIANCE)
+
+		);
+	}
+
 	public List<Product> getProducts() {
 		return products;
+	}
+
+	public List<ProductComparable> getProductsComparable() {
+		return instanceProductComparable();
 	}
 
 	public List<Product> listProductQuantityGreaterThan10() {
@@ -60,27 +84,25 @@ public class ProductService {
 
 	public static void updateValueIfCategoryIsSmartPhone(Product p) {
 		ProductService s = new ProductService();
-		if(s.checkCategory(p, CategoryTypes.SMARTPHONE)) {
-			Double newValue = p.getPrice() + (p.getPrice() * 10 ) / 100;
+		if (s.checkCategory(p, CategoryTypes.SMARTPHONE)) {
+			Double newValue = p.getPrice() + (p.getPrice() * 10) / 100;
 			p.setPrice(newValue);
 		}
 
 	}
-	
-	
-	public Product updateValueIfCategoryIsHomeAppliance(Product p ) {
-		if(checkCategory(p, CategoryTypes.HOMEAPPLIANCE)) {
-			Double newValue = p.getPrice() + (p.getPrice() * PERCENTAGE_15 ) / 100;
+
+	public Product updateValueIfCategoryIsHomeAppliance(Product p) {
+		if (checkCategory(p, CategoryTypes.HOMEAPPLIANCE)) {
+			Double newValue = p.getPrice() + (p.getPrice() * PERCENTAGE_15) / 100;
 			p.setPrice(newValue);
 		}
 		return p;
 	}
-	
-	
+
 	public void updateValue(Product p) {
 		ProductService s = new ProductService();
-		if(s.checkCategory(p, CategoryTypes.SMARTPHONE)) {
-			Double newValue = p.getPrice() + (p.getPrice() * PERCENTAGE_10 ) / 100;
+		if (s.checkCategory(p, CategoryTypes.SMARTPHONE)) {
+			Double newValue = p.getPrice() + (p.getPrice() * PERCENTAGE_10) / 100;
 			p.setPrice(newValue);
 		}
 

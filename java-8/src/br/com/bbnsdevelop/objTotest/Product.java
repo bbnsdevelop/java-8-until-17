@@ -1,6 +1,6 @@
 package br.com.bbnsdevelop.objTotest;
 
-public class Product implements Comparable<Product>{
+public class Product{
 	
 	private Integer id;
 	private String name;
@@ -82,14 +82,5 @@ public class Product implements Comparable<Product>{
 		this.category = category;
 	}
 
-
-	@Override
-	public int compareTo(Product o) {		
-		return this.name.compareTo(o.getName());
-	}
-	
-	
-
-	
 	
 }
