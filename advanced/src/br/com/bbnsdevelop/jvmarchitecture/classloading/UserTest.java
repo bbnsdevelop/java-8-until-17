@@ -1,11 +1,11 @@
-package br.com.bbnsdevelop.jvmarchitecture;
+package br.com.bbnsdevelop.jvmarchitecture.classloading;
 
 import java.lang.reflect.Method;
 
 public class UserTest {
 	
 	public static void main(String[] args) throws ClassNotFoundException {
-		Class c = Class.forName("br.com.bbnsdevelop.jvmarchitecture.User");
+		Class c = Class.forName("br.com.bbnsdevelop.jvmarchitecture.classloading.User");
 		
 		Method[] declaredMethods = c.getDeclaredMethods();
 		for (Method method : declaredMethods) {

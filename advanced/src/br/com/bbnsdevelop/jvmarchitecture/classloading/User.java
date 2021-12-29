@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.jvmarchitecture;
+package br.com.bbnsdevelop.jvmarchitecture.classloading;
 
 public class User {
 	
