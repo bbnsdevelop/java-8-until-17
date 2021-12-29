@@ -3,20 +3,20 @@ package br.com.bbnsdevelop.services.student;
 public class Student {
 	
 	private String name;
-	private Double nota;
+	private Double note;
 
 	public Student() {
 
 	}
 
-	public Student(String name, Double nota) {
+	public Student(String name, Double note) {
 		this.name = name;
-		this.nota = nota;
+		this.note = note;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [name=" + name + ", nota=" + nota + "]";
+		return "Student [name=" + name + ", nota=" + note + "]";
 	}
 
 	public String getName() {
@@ -27,12 +27,14 @@ public class Student {
 		this.name = name;
 	}
 
-	public Double getNota() {
-		return nota;
+	public Double getNote() {
+		return note;
 	}
 
-	public void setNota(Double nota) {
-		this.nota = nota;
+	public void setNote(Double note) {
+		this.note = note;
 	}
+
+	
 
 }
