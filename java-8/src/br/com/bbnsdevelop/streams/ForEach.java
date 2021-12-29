@@ -1,6 +1,6 @@
 package br.com.bbnsdevelop.streams;
 
-import br.com.bbnsdevelop.objTotest.ProductService;
+import br.com.bbnsdevelop.services.product.ProductService;
 
 public class ForEach {
 	

@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.objTotest;
+package br.com.bbnsdevelop.services.product;
 
 import java.util.Arrays;
 import java.util.List;

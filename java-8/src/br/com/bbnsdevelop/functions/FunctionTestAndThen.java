@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-import br.com.bbnsdevelop.objTotest.Product;
-import br.com.bbnsdevelop.objTotest.ProductService;
+import br.com.bbnsdevelop.services.product.Product;
+import br.com.bbnsdevelop.services.product.ProductService;
 
 public class FunctionTestAndThen {
 

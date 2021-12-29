@@ -2,8 +2,8 @@ package br.com.bbnsdevelop.lambdas.basic;
 
 import java.util.function.Consumer;
 
-import br.com.bbnsdevelop.objTotest.Product;
-import br.com.bbnsdevelop.objTotest.ProductService;
+import br.com.bbnsdevelop.services.product.Product;
+import br.com.bbnsdevelop.services.product.ProductService;
 
 public class Consumers {
 	

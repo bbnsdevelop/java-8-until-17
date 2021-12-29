@@ -2,8 +2,8 @@ package br.com.bbnsdevelop.reference;
 
 import java.util.List;
 
-import br.com.bbnsdevelop.objTotest.Product;
-import br.com.bbnsdevelop.objTotest.ProductService;
+import br.com.bbnsdevelop.services.product.Product;
+import br.com.bbnsdevelop.services.product.ProductService;
 
 public class MethodRefDemo {
 

@@ -1,6 +1,6 @@
 package br.com.bbnsdevelop.reference;
 
-import br.com.bbnsdevelop.objTotest.ProductService;
+import br.com.bbnsdevelop.services.product.ProductService;
 
 public class TestInterface {
 

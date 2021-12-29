@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.objTotest;
+package br.com.bbnsdevelop.services.product;
 
 public class ProductComparable extends Product implements Comparable<ProductComparable> {
 
