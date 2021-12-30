@@ -7,6 +7,7 @@ public class DeprecateTest {
 		
 		// not warning
 		d.method1();
+		d.name = "John";
 		
 		d.method2();
 		
