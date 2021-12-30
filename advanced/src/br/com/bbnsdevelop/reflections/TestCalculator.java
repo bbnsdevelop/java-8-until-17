@@ -19,7 +19,15 @@ public class TestCalculator {
 			Constructor<?> constructor2 = myClass.getConstructor(double.class, double.class);
 			Object newInstance2 = constructor2.newInstance(2.3, 4.6);
 			
+			Method method = myClass.getMethod("getNum1", null);
+			Object invoke = method.invoke(newInstance2, null);
 			
+			System.out.println(invoke);
+			
+			method = myClass.getMethod("getNum2", null);
+			invoke = method.invoke(newInstance2, null);
+			
+			System.out.println(invoke);
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
