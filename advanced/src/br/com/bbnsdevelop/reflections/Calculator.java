@@ -1,13 +1,12 @@
 package br.com.bbnsdevelop.reflections;
 
 public class Calculator {
-	
-	
+
 	private double num1;
 	private double num2;
-	
+
 	public Calculator() {
-		
+
 		System.out.println("Inside default constructor");
 	}
 
@@ -33,11 +32,13 @@ public class Calculator {
 		this.num2 = num2;
 	}
 
+	public double sum(int n1, int n2) {
+		return n1 + n2;
+	}
+
 	@Override
 	public String toString() {
 		return "Calculator [num1=" + num1 + ", num2=" + num2 + "]";
 	}
-	
-	
 
 }

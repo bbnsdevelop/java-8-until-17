@@ -42,6 +42,11 @@ public class TestCalculator {
 			invoke = method.invoke(newInstance2, null);			
 			System.out.println(invoke);
 			
+			
+			Method sum = myClass.getMethod("sum",int.class, int.class);
+			invoke = sum.invoke(newInstance2, 5, 15);
+			System.out.println(invoke);
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (NoSuchMethodException e) {
