@@ -1,5 +1,6 @@
 package br.com.bbnsdevelop.reflections;
 
+@MyAnnotation(value1 = "123", value2 = "4567")
 public class Calculator {
 
 	private double num1;

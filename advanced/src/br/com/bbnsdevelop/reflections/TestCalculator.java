@@ -1,9 +1,11 @@
 package br.com.bbnsdevelop.reflections;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 public class TestCalculator {
 	
@@ -56,6 +58,13 @@ public class TestCalculator {
 			invoke = method.invoke(newInstance2, null);			
 			System.out.println(invoke);
 			
+			
+			Annotation[] annotations = myClass.getAnnotations();
+			System.out.println(Arrays.toString(annotations));
+			
+			MyAnnotation annotation = (MyAnnotation) annotations[0];
+			System.out.println(annotation.value1());
+			System.out.println(annotation.value2());
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
