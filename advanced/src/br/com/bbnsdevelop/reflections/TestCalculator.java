@@ -1,6 +1,7 @@
 package br.com.bbnsdevelop.reflections;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -47,6 +48,15 @@ public class TestCalculator {
 			invoke = sum.invoke(newInstance2, 5, 15);
 			System.out.println(invoke);
 			
+
+			Field field = myClass.getDeclaredField("num1");
+			field.setAccessible(true);
+			field.set(newInstance2, 89);
+			method = myClass.getMethod("getNum1", null);
+			invoke = method.invoke(newInstance2, null);			
+			System.out.println(invoke);
+			
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (NoSuchMethodException e) {
@@ -60,6 +70,8 @@ public class TestCalculator {
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (NoSuchFieldException e) {
 			e.printStackTrace();
 		}
 	}
