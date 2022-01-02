@@ -7,6 +7,8 @@ public class PrivateMethodSendNotificationsImpl implements PrivateMethodSendNoti
 		
 		send.sendNotification();
 		send.sendNotifications();
+		// here has error because this method is private on interface
+		//send.establishConnection();
 	}
 
 }
