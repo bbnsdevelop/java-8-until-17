@@ -1,2 +1,4 @@
 module patientclinicals {
+	
+	requires patientmanagement;
 }
