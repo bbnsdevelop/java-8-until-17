@@ -1,5 +1,6 @@
 package br.com.bbnsdevelop.clinicals;
 
+import br.com.bbnsdevelop.entity.Patient;
 import br.com.bbnsdevelop.registration.PatientRegistration;
 
 public class PatientClinicals {
@@ -16,6 +17,11 @@ public class PatientClinicals {
 		registration.registerPatient();
 		
 		registration.getPatientDetails();
+	}
+	
+	public void doExams(Patient p) {
+		
+		System.out.println(p);
 	}
 
 }

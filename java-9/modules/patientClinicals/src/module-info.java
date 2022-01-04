@@ -1,4 +1,5 @@
 module patientclinicals {
 	
-	requires patientmanagement;
+	requires transitive patientmanagement;
+	exports br.com.bbnsdevelop.clinicals;
 }
