@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
+import java.net.http.HttpHeaders;
 import java.net.http.HttpRequest;
 import java.net.http.HttpRequest.BodyPublisher;
 import java.net.http.HttpRequest.BodyPublishers;
@@ -44,6 +45,12 @@ public class Http2ClientSyncDemo {
 		System.out.println(response.statusCode());
 		body = response.body();		
 		body.forEach( a -> System.out.println(a));
+		
+		
+		System.out.println("-".repeat(40));
+		HttpHeaders headers = response.headers();		
+		
+		System.out.println(headers.map());
 		
 	}
 
