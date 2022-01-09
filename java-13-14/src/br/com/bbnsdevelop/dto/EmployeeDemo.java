@@ -1,17 +1,16 @@
 package br.com.bbnsdevelop.dto;
 
 import br.com.bbnsdevelop.dto.EmployeeRecordDemo.EmployeeRecord;
+import br.com.bbnsdevelop.dto.records.Employee;
 
 public class EmployeeDemo {
 	
 	
 	public static void main(String[] args) {
 		
-		Employee employee = new Employee();
-		employee.setName("Snow");
-		employee.setSalary(1500.0);
-		
+		Employee employee = new Employee("Snow", 1500.00);				
 		System.out.println(employee);
+		
 		
 		System.out.println("-".repeat(50));
 		System.out.println("In record we don't need create methods GET/SET, toString hashcode, etc");

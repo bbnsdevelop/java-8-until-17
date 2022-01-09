@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.dto;
+package br.com.bbnsdevelop.dto.old;
 
 import java.util.Objects;
 
