@@ -10,14 +10,12 @@ import java.net.Socket;
 public class ChatClient {
 	
 	public static void main(String[] args) {
-		try {
-			
-			Socket socket = new Socket("localhost", 9090);
-			
-			DataInputStream in = new DataInputStream(socket.getInputStream());
-			DataOutputStream out = new DataOutputStream(socket.getOutputStream());
-			
-			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		try (
+				Socket socket = new Socket("localhost", 9090);			
+				DataInputStream in = new DataInputStream(socket.getInputStream());
+				DataOutputStream out = new DataOutputStream(socket.getOutputStream());				
+				BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+			){		
 			
 			String messageReceved="", messageTosend="";
 			while(true) {
@@ -31,11 +29,6 @@ public class ChatClient {
 			 	System.out.println("Server Says: ".concat(messageReceved));
 				
 			}
-
-			reader.close();
-			out.close();
-			in.close();
-			socket.close();
 			
 		} catch (IOException e) {			
 			e.printStackTrace();			
