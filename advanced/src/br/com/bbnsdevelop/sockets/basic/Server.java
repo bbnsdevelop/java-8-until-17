@@ -10,8 +10,9 @@ public class Server {
 	
 	public static void main(String[] args) {
 		try (ServerSocket serverSocket = new ServerSocket(8080)) {
-			Socket socket = serverSocket.accept();
+			System.out.println("Waiting for the client to connect on port 8080");
 			
+			Socket socket = serverSocket.accept();
 			System.out.println("Connection established");
 			
 			DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
