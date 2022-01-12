@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.pattern.lsp;
+package br.com.bbnsdevelop.patterns.solid.lsp;
 
 public abstract class Bank implements IPaymenttInstrument {
 	

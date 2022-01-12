@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.pattern.ocp.vehicle;
+package br.com.bbnsdevelop.patterns.solid.ocp.vehicle;
 
 public class Main {
 	
