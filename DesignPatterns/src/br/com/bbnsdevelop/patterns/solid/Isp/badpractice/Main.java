@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.patterns.solid.isp.badpractice;
+package br.com.bbnsdevelop.patterns.solid.Isp.badpractice;
 
 public class Main {
 	

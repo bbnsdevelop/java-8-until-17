@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.patterns.solid.lsp;
+package br.com.bbnsdevelop.patterns.solid.Lsp;
 
 public class DebitCard extends Bank {
 	

@@ -1,6 +1,6 @@
-package br.com.bbnsdevelop.patterns.solid.isp.goodpractice;
+package br.com.bbnsdevelop.patterns.solid.Isp.badpractice;
 
-public class Car extends Vehicle implements IVehicle, IVehicleCar{
+public class Car extends Vehicle implements IVehicle {
 
 	private int seats;
 	
@@ -18,6 +18,12 @@ public class Car extends Vehicle implements IVehicle, IVehicleCar{
 		System.out.println("Creating a new car: ".concat(color).concat(" ").concat(year).concat(" ")
 				.concat(String.valueOf(engine)).concat(" ").concat("with ").concat(String.valueOf(seats)).concat(" seats"));
 		startVehicle();
+
+	}
+
+	@Override
+	public void configureMotocycle(String color, String year, double engine) {
+		// TODO Auto-generated method stub
 
 	}
 

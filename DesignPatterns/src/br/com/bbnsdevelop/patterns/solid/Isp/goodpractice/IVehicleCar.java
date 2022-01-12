@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.patterns.solid.isp.goodpractice;
+package br.com.bbnsdevelop.patterns.solid.Isp.goodpractice;
 
 public interface IVehicleCar {
 	
