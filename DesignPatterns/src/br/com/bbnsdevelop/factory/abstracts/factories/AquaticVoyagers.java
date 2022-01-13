@@ -7,7 +7,7 @@ import br.com.bbnsdevelop.factory.abstracts.boats.IBoat;
 import br.com.bbnsdevelop.factory.abstracts.landvehicles.ILandVehicle;
 import br.com.bbnsdevelop.factory.abstracts.landvehicles.Motorcycle;
 
-public class NineNineTransport implements ITransportFactory {
+public class AquaticVoyagers implements ITransportFactory {
 
 	@Override
 	public ILandVehicle createTransportVehicle() {
