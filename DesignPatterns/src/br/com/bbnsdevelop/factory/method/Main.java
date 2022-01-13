@@ -1,10 +1,5 @@
 package br.com.bbnsdevelop.factory.method;
 
-import br.com.bbnsdevelop.factory.method.BicycleTransport;
-import br.com.bbnsdevelop.factory.method.CarTransport;
-import br.com.bbnsdevelop.factory.method.MotorcycleTransport;
-import br.com.bbnsdevelop.factory.method.Transport;
-
 public class Main {
 
 	private static Transport transport;
