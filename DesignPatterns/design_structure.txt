@@ -1,0 +1,32 @@
+There are 3 types of Design Patterns:
+
+# Creational Patterns:
+    - Singleton
+    - Factory
+    - Abstract Factory
+    - Builder
+    - Prototyoe
+
+# Structural Patterns
+    - Adapter
+    - Bridge
+    - Flyweight
+    - Decorator
+    - Proxy
+
+# Behavioral Patterns
+    - Chain of responsibility    
+    - Command
+    - Interpreter
+    - Iterator
+    - Mediator
+    - Memento
+    - Null Object
+    - Observer
+    - State
+    - Strategy
+    - Template method
+    - Visitor
+
+more information:
+    https://sourcemaking.com/design_patterns
