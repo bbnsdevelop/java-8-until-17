@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.v2_examples.factories.method;
+package br.com.bbnsdevelop.v2_examples.factories.method.pizza;
 
 import java.util.List;
 

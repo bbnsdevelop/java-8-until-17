@@ -1,9 +1,9 @@
-package br.com.bbnsdevelop.v2_examples.factories.method;
+package br.com.bbnsdevelop.v2_examples.factories.method.pizza;
 
 import java.util.List;
 import java.util.function.Consumer;
 
-public class VegPizza implements IPizza {
+public class CheesePizza implements IPizza {
 
 	@Override
 	public void prepare(List<Ingredient> ingredients) {
@@ -13,7 +13,7 @@ public class VegPizza implements IPizza {
 			System.out.println("Quantity: " + i.getQuantity());
 		};
 
-		System.out.println("Preparing veggie Pizza");
+		System.out.println("Preparing Cheese Pizza");
 		System.out.println("Ingredients to do a pizza");
 		ingredients.forEach(consumer);
 		
@@ -21,13 +21,13 @@ public class VegPizza implements IPizza {
 
 	@Override
 	public void bake() {
-		System.out.println("Baking veggie pizza");
+		System.out.println("Baking cheese pizza");
 
 	}
 
 	@Override
 	public void cut() {
-		System.out.println("Cutting veggie pizza");
+		System.out.println("Cutting cheese pizza");
 
 	}
 
