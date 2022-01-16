@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.v2_examples.template_method;
+package br.com.bbnsdevelop.v2_examples.template_method.datafiles;
 
 public abstract class DataRenderer {
 	

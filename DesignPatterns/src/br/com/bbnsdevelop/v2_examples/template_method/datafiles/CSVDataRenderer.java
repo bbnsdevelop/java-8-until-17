@@ -1,11 +1,11 @@
-package br.com.bbnsdevelop.v2_examples.template_method;
+package br.com.bbnsdevelop.v2_examples.template_method.datafiles;
 
-public class XMLDataRenderer extends DataRenderer {
+public class CSVDataRenderer extends DataRenderer {
 
 	@Override
 	public String readData() {
 		
-		return "XML data";
+		return "CSV data";
 	}
 
 	@Override
