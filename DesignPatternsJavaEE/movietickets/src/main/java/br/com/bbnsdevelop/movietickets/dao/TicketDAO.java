@@ -5,6 +5,6 @@ import br.com.bbnsdevelop.movietickets.entities.Ticket;
 public interface TicketDAO {
 	
 	
-	void create(Ticket ticket);
+	String create(Ticket ticket);
 
 }

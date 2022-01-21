@@ -18,7 +18,7 @@ public class TicketDAOImpl implements TicketDAO {
 	private TicketQuery query;
 	
 	@Override
-	public void create(Ticket ticket) {
+	public String create(Ticket ticket) {
 		
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
 		parameters.addValue("movie", ticket.getMovie());
@@ -26,6 +26,8 @@ public class TicketDAOImpl implements TicketDAO {
 		parameters.addValue("seat", ticket.getSeat());
 		
 		jdbcTemplate.update(query.save(), parameters);
+		
+		return "Ticket Purchased successfully";
 	}
 
 }

@@ -15,6 +15,10 @@
 		
 		<input type="submit" value="purchase" />
 	</form>
+	
+	<p style="background-color: green;">
+		${msg}
+	</p>
 
 </body>
 </html>
