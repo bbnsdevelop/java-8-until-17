@@ -11,7 +11,7 @@ public class TicketQuery {
 		
 		sb.append("INSERT INTO ticket ");
 		sb.append("(movie, screen, seat) ");
-		sb.append("VALUES(:movie, :screen, :seat)");
+		sb.append("VALUES (?, ?, ?)");
 		
 		return sb.toString();
 	}
