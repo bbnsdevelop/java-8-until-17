@@ -15,7 +15,8 @@ public class TicketController {
 	private TicketService service;
 	
 	@RequestMapping("/showCreateTicket")
-	public String showPageCreateTicket() {
+	public String showPageCreateTicket(ModelMap modelMap) {
+		modelMap.remove("msg");
 		return "createTicket";
 	}
 	

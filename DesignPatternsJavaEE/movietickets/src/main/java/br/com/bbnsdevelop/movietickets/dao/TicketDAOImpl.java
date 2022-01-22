@@ -21,7 +21,7 @@ public class TicketDAOImpl implements TicketDAO {
 		
 		jdbcTemplate.update(query.save(), ticket.getMovie(), ticket.getScreen(), ticket.getSeat());
 		
-		return "Ticket Purchased successfully";
+		return "Ticket ".concat(ticket.getMovie()).concat(" Purchased successfully");
 	}
 
 }
