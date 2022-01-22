@@ -15,6 +15,12 @@ public class Ticket {
 		this.screen = screen;
 		this.seat = seat;
 	}
+	
+	public Ticket(String movie, String screen, String seat) {
+		this.movie = movie;
+		this.screen = screen;
+		this.seat = seat;
+	}
 
 	public int getId() {
 		return id;

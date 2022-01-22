@@ -9,9 +9,9 @@
 <body>
 
 	<form action="createTicket" method="post">
-		Movie Name: <input type="text" name="movie" />
-		Screen: <input type="text" name="screen" />
-		Seat Nº: <input type="text" name="seat" />
+		Movie Name: <input type="text" name="movieName" />
+		Screen: <input type="text" name="screenNumber" />
+		Seat Nº: <input type="text" name="seatNumber" />
 		
 		<input type="submit" value="purchase" />
 	</form>

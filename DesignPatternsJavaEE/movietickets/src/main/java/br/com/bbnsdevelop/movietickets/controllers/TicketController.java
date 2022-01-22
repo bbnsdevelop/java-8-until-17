@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.bbnsdevelop.movietickets.entities.Ticket;
+import br.com.bbnsdevelop.movietickets.bo.TickectBO;
 import br.com.bbnsdevelop.movietickets.services.TicketService;
 
 @Controller
@@ -21,7 +21,7 @@ public class TicketController {
 	}
 	
 	@RequestMapping("/createTicket")
-	public String createTicket(Ticket ticket, ModelMap modelMap) {
+	public String createTicket(TickectBO ticket, ModelMap modelMap) {
 		String response = service.purchase(ticket);
 		
 		modelMap.addAttribute("msg", response);
