@@ -19,4 +19,26 @@ public class Field {
 		this.column = column;
 	}
 	
+	boolean addNext(Field field) {
+		boolean isLineDifferent = line != field.line;
+		boolean isColumnDifferent = column != field.column;
+		boolean diagonal = isLineDifferent && isColumnDifferent;
+		
+		int deltaLine = Math.abs(line - field.line);
+		int deltaColum = Math.abs(column - field.column);
+		int deltaSum = deltaLine +  deltaColum;
+		
+		if(deltaSum == 1 && !diagonal) {
+			fields.add(field);
+			return true;
+		}
+		else if(deltaSum == 2 && diagonal) {
+			fields.add(field);
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 }
