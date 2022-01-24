@@ -2,6 +2,7 @@ package br.com.bbnsdevelop.minesweeper.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import br.com.bbnsdevelop.minesweeper.exceptions.ExplosionException;
 
@@ -85,4 +86,47 @@ public class Field {
 	public boolean isClosed() {
 		return !isOpen;
 	}
+
+	
+	boolean goalAchieved() {
+		boolean isOk = !mined && isOpen;
+		boolean isProtected = mined && checked;
+		return isOk || isProtected;
+	}
+	
+	long mineNext() {
+		return fields.stream().filter(f -> f.mined).count();
+	}
+	
+	void reatart() {
+		isOpen = false;
+		mined = false;
+		checked = false;
+	}
+	
+	public String toString() {
+		if(checked) {
+			return "x";
+		}
+		else if(isOpen && mined) {
+			return "*";
+		}else if(isOpen && mineNext() > 0) {
+			return String.valueOf(mineNext());
+		}else if(isOpen) {
+			return " ";
+		}else {
+			return "?";
+		}
+	}
+	
+	
+	
+	public int getLine() {
+		return line;
+	}
+
+	public int getColumn() {
+		return column;
+	}
+	
 }
