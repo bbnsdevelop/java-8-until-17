@@ -44,7 +44,7 @@ public class Field {
 	}
 	
 	void changeChecked() {
-		if(!checked) {
+		if(!isOpen) {
 			checked = !checked;
 		}
 	}
@@ -69,4 +69,20 @@ public class Field {
 		return fields.stream().noneMatch(v -> v.mined);
 	}
 	
+	void undermine() {
+		mined = true;
+	}
+	
+	
+	public boolean isChecked() {
+		return checked;
+	}
+	
+	public boolean isOpen() {
+		return isOpen;
+	}
+	
+	public boolean isClosed() {
+		return !isOpen;
+	}
 }
