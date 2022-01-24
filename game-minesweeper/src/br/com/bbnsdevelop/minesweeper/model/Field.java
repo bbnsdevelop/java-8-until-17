@@ -3,6 +3,8 @@ package br.com.bbnsdevelop.minesweeper.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.bbnsdevelop.minesweeper.exceptions.ExplosionException;
+
 public class Field {
 	
 	private final int line;
@@ -39,6 +41,32 @@ public class Field {
 		else {
 			return false;
 		}
+	}
+	
+	void changeChecked() {
+		if(!checked) {
+			checked = !checked;
+		}
+	}
+	
+	
+	boolean open() {
+		
+		if(!isOpen && !checked) {
+			isOpen = true;
+			if(mined) {
+				throw new ExplosionException();
+			}
+			if(secureField()) {
+				fields.forEach(f -> f.open());
+			}
+			return true;
+		}		
+		return false;
+	}
+	
+	boolean secureField() {
+		return fields.stream().noneMatch(v -> v.mined);
 	}
 	
 }
