@@ -46,15 +46,17 @@ public class TerminalBoard {
 		try {
 			while(!board.goalAchieved()) {
 				System.out.println(board);
-				String typed = catchValueTyped("Typing (X,Y): ");
+				String typed = catchValueTyped("Typing line/column, (X,Y): ");
 				
 				Iterator<Integer> xy = Arrays.stream(typed.split(",")).map(e -> Integer.parseInt(e.trim())).iterator();
 				
 				typed = catchValueTyped("1 - Open or 2 - (uncheck / check)");
-				if("1".equals(typed)) {
-					board.open(xy.next(), xy.next());
+				int x = xy.next();
+				int y = xy.next();				
+				if("1".equals(typed)) {					
+					board.open(x, y);
 				}else if("2".equalsIgnoreCase(typed)) {
-					board.check(xy.next(), xy.next());
+					board.check(x, y);
 				}
 				
 			}
