@@ -13,6 +13,15 @@ public class Main {
 		
 		Integer number = (Integer) ListUtils.getLast1(numbers);
 		System.out.println(number);
+		
+		System.out.println("-".repeat(50));
+
+		
+		String last2 = ListUtils.getLast2(langs);
+		System.out.println(last2);
+		
+		Integer last22 = ListUtils.getLast2(numbers);
+		System.out.println(last22);
 	}
 
 }
