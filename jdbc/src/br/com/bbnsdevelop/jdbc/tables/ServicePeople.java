@@ -1,95 +1,35 @@
 package br.com.bbnsdevelop.jdbc.tables;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
-import br.com.bbnsdevelop.jdbc.factory.ConnectionFactory;
 import br.com.bbnsdevelop.jdbc.tables.entities.People;
 
 public class ServicePeople {
 
-	private Connection connection;
+	private DAO dao;
 
 	public ServicePeople() {
-		connection = ConnectionFactory.getConnection();
+		this.dao = new DAO();
 	}
 
-	public List<People> findAll() throws SQLException {
-		String sql = "SELECT * FROM people";
-
-		Statement stmt = connection.createStatement();
-		ResultSet resultSet = stmt.executeQuery(sql);
-
-		List<People> peolpe = new ArrayList<>();
-
-		while (resultSet.next()) {
-			int id = resultSet.getInt("id");
-			String name = resultSet.getString("name");
-			peolpe.add(new People(id, name));
-		}
-		return peolpe;
+	public List<People> findAll() {
+		return dao.findAll();
 	}
 
-	public People findById(int id) throws SQLException {
-		String sql = "SELECT * FROM people WHERE id = ?";
-		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setInt(1, id);
-
-		ResultSet resultSet = stmt.executeQuery();
-		People person = null;
-
-		while (resultSet.next()) {
-			id = resultSet.getInt("id");
-			String name = resultSet.getString("name");
-			person = new People(id, name);
-		}
-		return person;
+	public People findById(int id) {
+		return dao.findById(id);
 	}
 
-	public String updatePeople(People newPeople) throws SQLException {
-		People p = findById(newPeople.getId());
-
-		String sql = "UPDATE people SET name = ? WHERE id = ?";
-		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setString(1, newPeople.getName());
-		stmt.setInt(2, p.getId());
-		stmt.execute();
-
-		return "Successfully to update a person ".concat(newPeople.getName());
-
+	public String updatePeople(People newPeople) {
+		return dao.updatePeople(newPeople);
 	}
 
-	public String insertPerson(People p) throws SQLException {
-		StringBuilder sb = new StringBuilder();
-		sb.append("INSERT INTO people (name) ");
-		sb.append("VALUES (?)");
-		String sql = sb.toString();
-
-		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setString(1, p.getName());
-
-		stmt.execute();
-
-		return "Successfully to insert new person in database";
+	public String insertPerson(People p) {
+		return dao.insertPerson(p);
 	}
-	
-	public String deleteById(int id) throws SQLException {
-		StringBuilder sb = new StringBuilder();
-		sb.append("DELETE FROM people ");
-		sb.append("WHERE id = ?");
-		String sql = sb.toString();
 
-		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setInt(1, id);
-
-		stmt.execute();
-
-		return "Successfully to delete person in database";
+	public String deleteById(int id) {
+		return dao.deleteById(id);
 	}
 
 }
