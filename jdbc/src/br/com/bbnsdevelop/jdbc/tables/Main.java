@@ -17,6 +17,13 @@ public class Main {
 		for (People people : list) {
 			System.out.println(people);
 		}
+		
+		
+		System.out.println("-".repeat(50));
+		
+		People person = service.findById(1);
+		
+		System.out.println(person);
 	}
 
 }

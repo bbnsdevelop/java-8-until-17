@@ -1,6 +1,7 @@
 package br.com.bbnsdevelop.jdbc.tables;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -31,11 +32,24 @@ public class ServicePeople {
 			int id = resultSet.getInt("id");
 			String name = resultSet.getString("name");			
 			peolpe.add(new People(id, name));
-		}
-		
-		stmt.close();
-		connection.close();		
+		}				
 		return peolpe;
+	}
+	
+	public People findById(int id) throws SQLException {
+		String sql = "SELECT * FROM people WHERE id = ?";
+		PreparedStatement stmt = connection.prepareStatement(sql);
+		stmt.setInt(1, id);
+		
+		ResultSet resultSet = stmt.executeQuery();
+		People person = null;
+		
+		while (resultSet.next()) {
+			id = resultSet.getInt("id");
+			String name = resultSet.getString("name");
+			person = new People(id, name);
+		}		
+		return person;		
 	}
 
 }
