@@ -59,9 +59,37 @@ public class ServicePeople {
 		stmt.setString(1, newPeople.getName());
 		stmt.setInt(2, p.getId());
 		stmt.execute();
-		
+
 		return "Successfully to update a person ".concat(newPeople.getName());
-		
+
+	}
+
+	public String insertPerson(People p) throws SQLException {
+		StringBuilder sb = new StringBuilder();
+		sb.append("INSERT INTO people (name) ");
+		sb.append("VALUES (?)");
+		String sql = sb.toString();
+
+		PreparedStatement stmt = connection.prepareStatement(sql);
+		stmt.setString(1, p.getName());
+
+		stmt.execute();
+
+		return "Successfully to insert new person in database";
+	}
+	
+	public String deleteById(int id) throws SQLException {
+		StringBuilder sb = new StringBuilder();
+		sb.append("DELETE FROM people ");
+		sb.append("WHERE id = ?");
+		String sql = sb.toString();
+
+		PreparedStatement stmt = connection.prepareStatement(sql);
+		stmt.setInt(1, id);
+
+		stmt.execute();
+
+		return "Successfully to delete person in database";
 	}
 
 }
