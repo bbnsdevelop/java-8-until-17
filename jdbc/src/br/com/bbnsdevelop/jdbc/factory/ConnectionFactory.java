@@ -1,16 +1,21 @@
 package br.com.bbnsdevelop.jdbc.factory;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class ConnectionFactory {
 	
 	
 	public static Connection getConnection() {
-		String urlConnection = "jdbc:mysql://localhost:3306/course_java?verifyServerCertificate=false&useSSL=false";
-		String user = "root";
-		String pass = "123asd";
+		
+		Properties properties = getProperties();
+		
+		String urlConnection = properties.getProperty("db.url");
+		String user = properties.getProperty("db.user");
+		String pass = properties.getProperty("db.pass");
 		Connection connection = null;;
 		try {
 			connection = DriverManager.getConnection(urlConnection, user, pass);
@@ -20,6 +25,19 @@ public class ConnectionFactory {
 		}
 		
 		return connection;
+	}
+	
+	private static Properties getProperties() {
+		
+		Properties properties = new  Properties();
+		String path = "/connections.properties";
+		try {
+			properties.load(ConnectionFactory.class.getResourceAsStream(path));
+			return properties;
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		
 	}
 
 }
