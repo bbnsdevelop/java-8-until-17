@@ -23,5 +23,10 @@ public class UserService {
 		manager.getTransaction().commit();
 		return "Successfully to save the user in database";
 	}
+	
+	public User findUserById(Long id) {
+		return manager.find(User.class, id);
+	}
+	
 
 }
