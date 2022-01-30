@@ -1,19 +1,17 @@
 package br.com.bbnsdevelop.jpa;
 
-import br.com.bbnsdevelop.jpa.entities.User;
-import br.com.bbnsdevelop.jpa.service.UserService;
+import br.com.bbnsdevelop.jpa.view.Process;
 
 public class Main {
 	
 	
 	public static void main(String[] args) {
 		
-		UserService service = new UserService();
-		
-		User user = new User("Bob", "bob_marley@gmail.com");
-		String response = service.createUser(user);
-		
-		System.out.println(response);
+		int option = Process.operations();
+		while (option != 6) {			
+			Process.switchMethod(option);
+			option = Process.operations();
+		}
 		
 	}
 
