@@ -80,6 +80,19 @@ public class Process {
 	
 	private static void delete() {
 		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Type id to find");
+		Long id = in.nextLong();		
+		User user = service.findUserById(id);
+		
+		if(user != null) {
+			String result = service.delete(user);			
+			System.out.println(result);			
+			
+		}else {
+			System.out.println("User not found!");
+		}
+		
 		
 	}
 
@@ -106,6 +119,11 @@ public class Process {
 		}
 		
 		System.out.println("-".repeat(50));
+		
+	}
+
+	public static void closeConnection() {
+		service.close();
 		
 	}
 	

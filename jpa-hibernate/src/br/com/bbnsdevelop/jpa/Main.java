@@ -20,6 +20,7 @@ public class Main {
 		System.out.println("-".repeat(50));
 		System.out.println("-----------------------bye------------------------");
 		System.out.println("-".repeat(50));
+		Process.closeConnection();
 	}
 
 }

@@ -48,6 +48,23 @@ public class UserService {
 		
 		return "Successfully to update the user in database id: " + user.getId();
 	}
+
+
+	public String delete(User user) {
+		manager.getTransaction().begin();
+		manager.remove(user);
+		
+		manager.getTransaction().commit();
+		return "Successfully to delete the user in database";
+		
+	}
+
+
+	public void close() {
+		manager.close();
+		factory.close();
+		
+	}
 	
 
 }
