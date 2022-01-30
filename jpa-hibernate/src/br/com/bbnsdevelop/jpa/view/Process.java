@@ -4,12 +4,16 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
+import br.com.bbnsdevelop.jpa.entities.Customer;
+import br.com.bbnsdevelop.jpa.entities.Seat;
 import br.com.bbnsdevelop.jpa.entities.User;
+import br.com.bbnsdevelop.jpa.service.ReservationService;
 import br.com.bbnsdevelop.jpa.service.UserService;
 
 public class Process {
 	
 	private static UserService service = new UserService();	
+	private static ReservationService reservation = new ReservationService();
 	
 	public static int operations() {
 		Scanner in = new Scanner(System.in);
@@ -18,7 +22,8 @@ public class Process {
 		System.out.println("3 - Find by id");
 		System.out.println("4 - Update by id");
 		System.out.println("5 - Delete by id");
-		System.out.println("6 - exit");
+		System.out.println("6 - Make reservation");
+		System.out.println("7 - exit");
 		System.out.println("Choose a options: ");
 		int option = Integer.valueOf(in.nextLine());
 		return option;
@@ -40,6 +45,9 @@ public class Process {
 			break;
 		case 5:
 			delete();
+			break;
+		case 6:
+			saveReservation();
 			break;
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + option);			
@@ -125,6 +133,19 @@ public class Process {
 		
 		System.out.println("-".repeat(50));
 		
+	}
+	
+	private static void saveReservation() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Type name of client: ");
+		String name = in.nextLine();
+		System.out.println("Type your seat: ");
+		String seatNumber = in.nextLine();
+		
+		Seat seat = new Seat(seatNumber);
+		Customer customer = new Customer(name, seat);
+		String result = reservation.save(customer);
+		System.out.println(result);
 	}
 
 }
