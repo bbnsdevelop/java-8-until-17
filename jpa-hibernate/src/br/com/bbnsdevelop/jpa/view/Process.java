@@ -44,7 +44,12 @@ public class Process {
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + option);			
 		}
-	}	
+	}
+	
+	public static void closeConnection() {
+		service.close();
+		
+	}
 
 	private static void create() {
 		
@@ -81,7 +86,7 @@ public class Process {
 	private static void delete() {
 		
 		Scanner in = new Scanner(System.in);
-		System.out.println("Type id to find");
+		System.out.println("Type id to delete: ");
 		Long id = in.nextLong();		
 		User user = service.findUserById(id);
 		
@@ -121,11 +126,5 @@ public class Process {
 		System.out.println("-".repeat(50));
 		
 	}
-
-	public static void closeConnection() {
-		service.close();
-		
-	}
-	
 
 }
