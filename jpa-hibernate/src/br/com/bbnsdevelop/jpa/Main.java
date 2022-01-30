@@ -11,8 +11,15 @@ public class Main {
 		while (option != 6) {			
 			Process.switchMethod(option);
 			option = Process.operations();
+			System.out.println("-".repeat(50));
 		}
-		
+		exit();
+	}
+
+	private static void exit() {
+		System.out.println("-".repeat(50));
+		System.out.println("-----------------------bye------------------------");
+		System.out.println("-".repeat(50));
 	}
 
 }

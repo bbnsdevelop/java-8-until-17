@@ -42,7 +42,7 @@ public class UserService {
 	
 	public String update(User user) {
 		manager.getTransaction().begin();
-		
+		manager.detach(user); // this command is to evidence manager status, if you don't put detach from time to time the JPA save the object in database, because, it's on context transaction
 		manager.merge(user);		
 		manager.getTransaction().commit();		
 		
