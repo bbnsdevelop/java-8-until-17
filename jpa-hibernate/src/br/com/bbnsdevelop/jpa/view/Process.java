@@ -49,9 +49,9 @@ public class Process {
 	private static void create() {
 		
 		Scanner in = new Scanner(System.in);
-		System.out.println("Typing name: ");
+		System.out.println("Type name: ");
 		String name = in.nextLine();
-		System.out.println("Typing email: ");
+		System.out.println("Type email: ");
 		String email = in.nextLine();		
 		
 		User user = new User(name, email);		
@@ -63,6 +63,7 @@ public class Process {
 	
 	private static void findById() {
 		Scanner in = new Scanner(System.in);
+		System.out.println("Type id to find");
 		Long id = in.nextLong();
 		
 		User user = service.findUserById(id);
@@ -83,7 +84,28 @@ public class Process {
 	}
 
 	private static void update() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Type id to find");
+		Long id = in.nextLong();		
+		User user = service.findUserById(id);
 		
+		if(user != null) {
+			in.nextLine();
+			System.out.println("Type name: ");
+			String name = in.nextLine();
+			System.out.println("Type email: ");
+			String email = in.nextLine();
+			
+			user.setName((name == null || name.isBlank()) ? user.getName() : name );
+			user.setEmail((email == null || email.isBlank()) ? user.getEmail() : email);
+			
+			String result = service.update(user);
+			System.out.println(result);			
+		}else {
+			System.out.println("User not found!");
+		}
+		
+		System.out.println("-".repeat(50));
 		
 	}
 	

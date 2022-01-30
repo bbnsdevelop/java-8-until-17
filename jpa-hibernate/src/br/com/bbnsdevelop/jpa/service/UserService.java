@@ -39,5 +39,15 @@ public class UserService {
 		return users;
 	}
 	
+	
+	public String update(User user) {
+		manager.getTransaction().begin();
+		
+		manager.merge(user);		
+		manager.getTransaction().commit();		
+		
+		return "Successfully to update the user in database id: " + user.getId();
+	}
+	
 
 }
