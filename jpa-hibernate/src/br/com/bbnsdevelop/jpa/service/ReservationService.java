@@ -13,7 +13,6 @@ public class ReservationService {
 
 	public String save(Customer customer) {
 		dao.openTransaction()
-			.save(customer.getSeat())
 			.save(customer)
 			.closeTransaction()
 			.closeConnection();
@@ -21,10 +20,12 @@ public class ReservationService {
 	}
 	
 	public String saveAtomic(Customer customer) {
-		dao.openTransaction()
-			.saveAtomic(customer)
-			.closeConnection();
+		dao.saveAtomic(customer);
 		return "Successfully to save the reservation in database id: " + customer.getId();
+	}
+	
+	public Customer findById(Long id) {
+		return dao.findById(id);
 	}
 
 }

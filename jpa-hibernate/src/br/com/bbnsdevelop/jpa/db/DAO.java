@@ -45,10 +45,13 @@ public abstract class DAO<E> {
 		return this;
 	}
 	
-	public DAO<E> saveAtomic(E object){
+	public DAO<E> saveAtomic(E object){		
 		
-		manager.persist(object);
 		return this.openTransaction().save(object).closeTransaction();
+	}
+	
+	public E findById(Object id) {
+		return manager.find(object, id);
 	}
 	
 	public List<E> getAll(int limit, int offset){

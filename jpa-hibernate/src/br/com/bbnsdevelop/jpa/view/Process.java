@@ -23,7 +23,8 @@ public class Process {
 		System.out.println("4 - Update by id");
 		System.out.println("5 - Delete by id");
 		System.out.println("6 - Make reservation");
-		System.out.println("7 - exit");
+		System.out.println("7 - Find Customer and Seat");
+		System.out.println("99 - exit");
 		System.out.println("Choose a options: ");
 		int option = Integer.valueOf(in.nextLine());
 		return option;
@@ -48,6 +49,9 @@ public class Process {
 			break;
 		case 6:
 			saveReservation();
+			break;
+		case 7:
+			findCustomer();
 			break;
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + option);			
@@ -146,6 +150,14 @@ public class Process {
 		Customer customer = new Customer(name, seat);
 		String result = reservation.saveAtomic(customer);
 		System.out.println(result);
+	}
+	
+	private static void findCustomer() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Type id to find");
+		Long id = in.nextLong();
+		Customer customer = reservation.findById(id);
+		System.out.println("Customer: " + customer.getName() + " Seat: "+ customer.getSeat().getName());
 	}
 
 }

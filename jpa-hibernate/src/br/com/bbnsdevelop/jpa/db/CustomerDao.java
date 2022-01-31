@@ -1,10 +1,12 @@
 package br.com.bbnsdevelop.jpa.db;
 
-public class CustomerDao extends DAO<Object>{
+import br.com.bbnsdevelop.jpa.entities.Customer;
+
+public class CustomerDao extends DAO<Customer>{
 	
 	
 	public CustomerDao() {
-		super(Object.class);
+		super(Customer.class);
 	}
 
 }
