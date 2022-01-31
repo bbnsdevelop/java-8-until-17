@@ -19,5 +19,12 @@ public class ReservationService {
 			.closeConnection();
 		return "Successfully to save the reservation in database id: " + customer.getId();
 	}
+	
+	public String saveAtomic(Customer customer) {
+		dao.openTransaction()
+			.saveAtomic(customer)
+			.closeConnection();
+		return "Successfully to save the reservation in database id: " + customer.getId();
+	}
 
 }

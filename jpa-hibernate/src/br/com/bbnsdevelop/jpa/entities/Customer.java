@@ -1,5 +1,6 @@
 package br.com.bbnsdevelop.jpa.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,7 @@ public class Customer {
 	
 	private String name;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="seat_id" ,nullable = false, unique = true)
 	private Seat seat;
 

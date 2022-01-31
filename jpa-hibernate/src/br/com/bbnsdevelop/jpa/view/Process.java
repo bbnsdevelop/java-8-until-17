@@ -144,7 +144,7 @@ public class Process {
 		
 		Seat seat = new Seat(seatNumber);
 		Customer customer = new Customer(name, seat);
-		String result = reservation.save(customer);
+		String result = reservation.saveAtomic(customer);
 		System.out.println(result);
 	}
 
