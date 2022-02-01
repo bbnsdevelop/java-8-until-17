@@ -33,7 +33,7 @@ public class ItemOrder {
 
 	public ItemOrder(Order order, Product product, int quantity) {
 		this.order = order;
-		this.product = product;
+		this.setProduct(product);
 		this.quantity = quantity;
 	}
 

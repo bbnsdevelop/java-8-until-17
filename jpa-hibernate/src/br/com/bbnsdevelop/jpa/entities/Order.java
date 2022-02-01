@@ -10,17 +10,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "order")
+@Table(name = "tb_order")
 public class Order {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "dt_transaction")
 	private Date date;
 
 	public Order() {
+		this.date = new Date();
 	}
 
 	public Order(Date date) {
