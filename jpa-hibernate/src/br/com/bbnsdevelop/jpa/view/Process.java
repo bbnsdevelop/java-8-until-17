@@ -5,8 +5,12 @@ import java.util.Scanner;
 import java.util.function.Consumer;
 
 import br.com.bbnsdevelop.jpa.entities.Customer;
+import br.com.bbnsdevelop.jpa.entities.ItemOrder;
+import br.com.bbnsdevelop.jpa.entities.Order;
+import br.com.bbnsdevelop.jpa.entities.Product;
 import br.com.bbnsdevelop.jpa.entities.Seat;
 import br.com.bbnsdevelop.jpa.entities.User;
+import br.com.bbnsdevelop.jpa.service.OrderService;
 import br.com.bbnsdevelop.jpa.service.ReservationService;
 import br.com.bbnsdevelop.jpa.service.UserService;
 
@@ -14,6 +18,7 @@ public class Process {
 	
 	private static UserService service = new UserService();	
 	private static ReservationService reservation = new ReservationService();
+	private static OrderService orderService = new OrderService();
 	
 	public static int operations() {
 		Scanner in = new Scanner(System.in);
@@ -24,6 +29,7 @@ public class Process {
 		System.out.println("5 - Delete by id");
 		System.out.println("6 - Make reservation");
 		System.out.println("7 - Find Customer and Seat");
+		System.out.println("8 - Buy item");
 		System.out.println("99 - exit");
 		System.out.println("Choose a options: ");
 		int option = Integer.valueOf(in.nextLine());
@@ -52,6 +58,9 @@ public class Process {
 			break;
 		case 7:
 			findCustomer();
+			break;
+		case 8:
+			buyItem();
 			break;
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + option);			
@@ -158,6 +167,24 @@ public class Process {
 		Long id = in.nextLong();
 		Customer customer = reservation.findById(id);
 		System.out.println("Customer: " + customer.getName() + " Seat: "+ customer.getSeat().getName());
+	}
+	
+	private static void buyItem() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Type name of product: ");
+		String name = in.nextLine();
+		System.out.println("Type price: ");
+		Double price = in.nextDouble();
+		
+		System.out.println("Type quantity: ");
+		int quantity = in.nextInt();
+		
+		Order oder = new Order();		
+		Product product = new Product(name, price);
+		ItemOrder item = new ItemOrder(oder, product, quantity);
+		
+		String result = orderService.save(item);
+		System.out.println(result);
 	}
 
 }
