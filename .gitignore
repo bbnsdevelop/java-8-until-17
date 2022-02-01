@@ -27,6 +27,6 @@ target/*
 /target/
 
 .settings
-/build/*
+*/build/*
 
 
