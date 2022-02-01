@@ -53,11 +53,15 @@ public class Process {
 		case 8:
 			buyItem();
 			break;
+		case 9:
+			findOrder();
+			break;
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + option);			
 		}
 	}
 	
+
 	public static void closeConnection() {
 		service.close();
 		
@@ -158,6 +162,18 @@ public class Process {
 		Long id = in.nextLong();
 		Customer customer = reservation.findById(id);
 		System.out.println("Customer: " + customer.getName() + " Seat: "+ customer.getSeat().getName());
+	}
+	
+	private static void findOrder() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Type id to find");
+		Long id = in.nextLong();
+		Order order = orderService.findById(id);
+		System.out.println("Date of transaction: " + order.getDate());
+		Consumer<ItemOrder> consumer = i -> System.out.println("Product: " +i.getProduct().getName() + " Quantity: " + i.getQuantity() + " Total price: " + i.getPrice());
+		
+		order.getItens().forEach(consumer);
+		
 	}
 	
 	private static void buyItem() {

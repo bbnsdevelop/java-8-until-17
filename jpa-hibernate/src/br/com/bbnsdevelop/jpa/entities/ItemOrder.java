@@ -33,8 +33,8 @@ public class ItemOrder {
 
 	public ItemOrder(Order order, Product product, int quantity) {
 		this.order = order;
-		this.setProduct(product);
 		this.quantity = quantity;
+		this.setProduct(product);
 	}
 
 	public Long getId() {
@@ -60,7 +60,7 @@ public class ItemOrder {
 	public void setProduct(Product product) {
 		this.product = product;
 		
-		if(product != null && this.price == null) {
+		if(product != null && this.price == null || this.price == 0) {
 			this.price = this.product.getPrice() * this.quantity;
 		}
 	}
