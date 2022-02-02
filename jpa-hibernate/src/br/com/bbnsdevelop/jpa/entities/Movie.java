@@ -36,7 +36,7 @@ public class Movie {
 			joinColumns = @JoinColumn(name = "movie_id", referencedColumnName = "id"),
 			inverseJoinColumns = @JoinColumn(name ="actor_id", referencedColumnName = "id")
 	)
-	private List<Actor> acotrs = new ArrayList<>();
+	private List<Actor> actors = new ArrayList<>();
 
 	public Movie() {
 	}
@@ -49,7 +49,7 @@ public class Movie {
 	
 	public void addActor(Actor actor) {
 		if(actor != null && noteContainsActor(actor)) {
-			getAcotrs().add(actor);
+			getActors().add(actor);
 			
 			if(noteContainsMovie(actor)) {
 				actor.getMovies().add(this);				
@@ -58,7 +58,7 @@ public class Movie {
 	}
 	
 	private boolean noteContainsActor(Actor actor) {
-		return !getAcotrs().contains(actor);
+		return !getActors().contains(actor);
 	}
 	private boolean noteContainsMovie(Actor actor) {
 		return ! actor.getMovies().contains(this);
@@ -89,12 +89,12 @@ public class Movie {
 		this.score = score;
 	}
 
-	public List<Actor> getAcotrs() {
-		return acotrs;
+	public List<Actor> getActors() {
+		return actors;
 	}
 
-	public void setAcotrs(List<Actor> acotrs) {
-		this.acotrs = acotrs;
+	public void setActors(List<Actor> actors) {
+		this.actors = actors;
 	}
 
 
