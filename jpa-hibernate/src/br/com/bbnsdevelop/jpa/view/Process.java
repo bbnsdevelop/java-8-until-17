@@ -45,7 +45,10 @@ public class Process {
 			break;
 		case 11:
 			MovieView.save();
-			break;			
+			break;
+		case 12:
+			MovieView.findMovies();
+			break;
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + option);			
 		}

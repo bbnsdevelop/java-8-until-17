@@ -1,5 +1,8 @@
 package br.com.bbnsdevelop.jpa.view;
 
+import java.util.List;
+import java.util.Scanner;
+
 import br.com.bbnsdevelop.jpa.entities.Actor;
 import br.com.bbnsdevelop.jpa.entities.Movie;
 import br.com.bbnsdevelop.jpa.service.MovieService;
@@ -24,6 +27,20 @@ public class MovieView {
 		String result = service.save(movie1);
 		
 		System.out.println(result);
+	}
+	
+	
+	protected static void findMovies() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Type score to find the best movies:");
+		Double score = in.nextDouble();
+		List<Movie> movies = service.getMovies(score);
+		for (Movie movie : movies) {
+			System.out.println(movie.getName());
+			for (Actor actor : movie.getActors()) {
+				System.out.println("Actor: " + actor.getName());
+			}
+		}
 	}
 
 }

@@ -3,6 +3,8 @@
 	<persistence-unit name="jpa-hibernate">	
 	
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> 
+	<mapping-file>META-INF/consultas.xml</mapping-file>
+	
 	<class>br.com.bbnsdevelop.jpa.entities.User</class>
 	<class>br.com.bbnsdevelop.jpa.entities.Product</class>
 	<class>br.com.bbnsdevelop.jpa.entities.Seat</class>
