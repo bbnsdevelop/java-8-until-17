@@ -45,4 +45,8 @@ public class Process {
 		}
 	}
 
+	public static void closeConnection() {
+		UserView.closeConnection();		
+	}
+
 }
