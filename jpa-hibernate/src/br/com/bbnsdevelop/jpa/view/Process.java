@@ -43,6 +43,9 @@ public class Process {
 		case 10:
 			FamilyView.save();
 			break;
+		case 11:
+			MovieView.save();
+			break;			
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + option);			
 		}

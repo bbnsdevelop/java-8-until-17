@@ -11,6 +11,8 @@
 	<class>br.com.bbnsdevelop.jpa.entities.Order</class>
 	<class>br.com.bbnsdevelop.jpa.entities.Uncle</class>
 	<class>br.com.bbnsdevelop.jpa.entities.Nephew</class>
+	<class>br.com.bbnsdevelop.jpa.entities.Actor</class>
+	<class>br.com.bbnsdevelop.jpa.entities.Movie</class>
 	     
 	
         <properties>
