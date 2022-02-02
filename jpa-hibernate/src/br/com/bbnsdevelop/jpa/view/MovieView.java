@@ -35,12 +35,15 @@ public class MovieView {
 		System.out.println("Type score to find the best movies:");
 		Double score = in.nextDouble();
 		List<Movie> movies = service.getMovies(score);
+		System.out.println("-".repeat(50));
 		for (Movie movie : movies) {
-			System.out.println(movie.getName());
+			System.out.println("Movie: " + movie.getName());
 			for (Actor actor : movie.getActors()) {
 				System.out.println("Actor: " + actor.getName());
 			}
+			System.out.println("-".repeat(50));
 		}
+		
 	}
 
 }

@@ -3,7 +3,7 @@
 	
 	<named-query name="moviesScoreGreaterThan">
 		<query>
-			SELECT m FROM Movie m
+			SELECT DISTINCT m FROM Movie m
 			join fetch m.actors 
 			WHERE m.score > :score
 		</query>
