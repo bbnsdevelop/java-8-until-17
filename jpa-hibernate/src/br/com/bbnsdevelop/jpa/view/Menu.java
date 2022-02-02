@@ -12,6 +12,7 @@ public class Menu {
 		System.out.println("7 - Find Customer and Seat");
 		System.out.println("8 - Buy item");
 		System.out.println("9 - find order item");
+		System.out.println("10 - save uncle and nephew");
 		System.out.println("99 - exit");
 		System.out.println("Choose a options: ");
 	}

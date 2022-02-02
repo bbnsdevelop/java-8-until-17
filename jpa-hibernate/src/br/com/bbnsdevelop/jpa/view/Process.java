@@ -40,6 +40,9 @@ public class Process {
 		case 9:
 			OrderView.findOrder();
 			break;
+		case 10:
+			FamilyView.save();
+			break;
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + option);			
 		}

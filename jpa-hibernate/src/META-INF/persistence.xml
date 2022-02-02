@@ -8,7 +8,10 @@
 	<class>br.com.bbnsdevelop.jpa.entities.Seat</class>
 	<class>br.com.bbnsdevelop.jpa.entities.Customer</class> 
 	<class>br.com.bbnsdevelop.jpa.entities.ItemOrder</class>
-	<class>br.com.bbnsdevelop.jpa.entities.Order</class>     
+	<class>br.com.bbnsdevelop.jpa.entities.Order</class>
+	<class>br.com.bbnsdevelop.jpa.entities.Uncle</class>
+	<class>br.com.bbnsdevelop.jpa.entities.Nephew</class>
+	     
 	
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
