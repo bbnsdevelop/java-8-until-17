@@ -15,6 +15,7 @@ public class Menu {
 		System.out.println("10 - save uncle and nephew");
 		System.out.println("11 - save movie and actor");
 		System.out.println("12 - find movie by score");
+		System.out.println("13 - score all movies");
 		System.out.println("99 - exit");
 		System.out.println("Choose a options: ");
 	}

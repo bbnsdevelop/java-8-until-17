@@ -3,6 +3,7 @@ package br.com.bbnsdevelop.jpa.view;
 import java.util.List;
 import java.util.Scanner;
 
+import br.com.bbnsdevelop.jpa.dto.FilmScore;
 import br.com.bbnsdevelop.jpa.entities.Actor;
 import br.com.bbnsdevelop.jpa.entities.Movie;
 import br.com.bbnsdevelop.jpa.service.MovieService;
@@ -44,6 +45,12 @@ public class MovieView {
 			System.out.println("-".repeat(50));
 		}
 		
+	}
+	
+	protected static void score() {
+		FilmScore scoreMovies = service.getScoreMovies();
+		System.out.println("-".repeat(50));
+		System.out.println("The average is: " + scoreMovies.getAverage());
 	}
 
 }
