@@ -8,6 +8,19 @@
 			WHERE m.score > :score
 		</query>
 	</named-query>
+	
+	<named-native-query name="filmAveragequery" result-set-mapping="filmMap" >
+		<query>
+			SELECT AVG(score) as average FROM movie
+		</query>
+	</named-native-query>
+	
+	<sql-result-set-mapping name="filmMap">
+		<constructor-result target-class="br.com.bbnsdevelop.jpa.dto.FilmScore">
+			<column name="average" class="java.lang.Double"/>
+		
+		</constructor-result>
+	</sql-result-set-mapping>
 
 
 </entity-mappings>

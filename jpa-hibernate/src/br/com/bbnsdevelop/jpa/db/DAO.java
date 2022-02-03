@@ -78,6 +78,11 @@ public abstract class DAO<E> {
 		}
 		return query.getResultList();
 	}
+	
+	public E findOne(String nameQuery, Object... params) {
+		List<E> list = find(nameQuery, params); 
+		return list.isEmpty() ? null : list.get(0); 
+	}
 
 	public void closeConnection() {
 		manager.close();
