@@ -1,4 +1,4 @@
-package br.com.bbnsdevelop.sb.models;
+package br.com.bbnsdevelop.sb.model.entities;
 
 public class Customer {
 	
