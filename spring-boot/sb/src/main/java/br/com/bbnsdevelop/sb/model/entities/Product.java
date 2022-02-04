@@ -17,13 +17,26 @@ public class Product {
 	
 	@Column(name ="name", nullable = false, length = 60)
 	private String name;
+	
+	
+	@Column(name ="price", nullable = false, scale = 2, precision = 10)
+	private Double price;
+	
+	@Column(name ="discount", nullable = false, scale = 2, precision = 3)
+	private Double discount;
+	
 
 	public Product() {
 	}
 
-	public Product(String name) {
+	public Product(String name, Double price, Double discount) {
+		super();
 		this.name = name;
+		this.price = price;
+		this.discount = discount;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -39,6 +52,22 @@ public class Product {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public Double getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(Double discount) {
+		this.discount = discount;
 	}
 	
 
