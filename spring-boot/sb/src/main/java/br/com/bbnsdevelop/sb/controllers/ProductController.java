@@ -1,5 +1,7 @@
 package br.com.bbnsdevelop.sb.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +19,7 @@ public class ProductController {
 	private ProductRepository productRepository;
 	
 	@PostMapping
-	public Product save(@RequestBody Product p) {		
+	public Product save(@RequestBody @Valid Product p) {		
 		productRepository.save(p);
 		return p;
 	}

@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tb_product")
@@ -15,13 +18,16 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name ="name", nullable = false, length = 60)
+	@NotBlank
+	@Column(name ="name", nullable = false, length = 60)	
 	private String name;
 	
-	
+	@Min(0)
 	@Column(name ="price", nullable = false, scale = 2, precision = 10)
 	private Double price;
 	
+	@Min(0)
+	@Max(1)
 	@Column(name ="discount", nullable = false, scale = 2, precision = 3)
 	private Double discount;
 	
