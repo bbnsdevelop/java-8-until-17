@@ -11,3 +11,7 @@ POST http://localhost:8080/verbs
 PUT http://localhost:8080/verbs
 PATCH http://localhost:8080/verbs
 DELETE http://localhost:8080/verbs
+
+controller calculator
+http://localhost:8080/calculator/subtract?a=150&b=100
+http://localhost:8080/calculator/sum/50/100
