@@ -4,3 +4,10 @@ http://localhost:8080/hello
 
 controller customer
 http://localhost:8080/customer
+
+controller verbs
+GET http://localhost:8080/verbs
+POST http://localhost:8080/verbs
+PUT http://localhost:8080/verbs
+PATCH http://localhost:8080/verbs
+DELETE http://localhost:8080/verbs
