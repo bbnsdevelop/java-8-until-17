@@ -1,0 +1,42 @@
+Hibernate: 
+    
+    create table student (
+       type varchar(2) not null,
+        id bigint not null auto_increment,
+        name varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    
+    create table student_scholarship (
+       valueScholarship double precision,
+        id bigint not null,
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    
+    alter table student_scholarship 
+       add constraint FKgqgumhtutv97qj6cr2n6xrao 
+       foreign key (id) 
+       references student (id);
+
+------------------------------------------------------------------
+
+
+mysql> desc student;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| type  | varchar(2)   | NO   |     | NULL    |                |
+| id    | bigint(20)   | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(255) | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> desc student_scholarship;
++------------------+------------+------+-----+---------+-------+
+| Field            | Type       | Null | Key | Default | Extra |
++------------------+------------+------+-----+---------+-------+
+| valueScholarship | double     | YES  |     | NULL    |       |
+| id               | bigint(20) | NO   | PRI | NULL    |       |
++------------------+------------+------+-----+---------+-------+
