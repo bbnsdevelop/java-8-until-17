@@ -6,9 +6,11 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,6 +43,13 @@ public class ProductController {
 	@GetMapping("/{id}")
 	public Product getById(@PathVariable("id") Long id ) {
 		return productRepository.findById(id).orElse(null);
+	}
+	@PutMapping("/{id}")
+	public Product update(@PathVariable("id") Long id, @RequestBody Product product ) throws NotFoundException {
+		
+		productRepository.findById(id).orElseThrow(NotFoundException::new);		
+		product.setId(id);
+		return productRepository.save(product);
 	}
 
 }
