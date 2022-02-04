@@ -1,0 +1,6 @@
+controller hello
+http://localhost:8080/hello
+
+
+controller customer
+http://localhost:8080/customer
