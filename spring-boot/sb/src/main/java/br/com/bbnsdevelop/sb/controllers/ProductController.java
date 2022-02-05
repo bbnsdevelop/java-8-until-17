@@ -44,8 +44,9 @@ public class ProductController {
 	public Product getById(@PathVariable("id") Long id ) {
 		return productRepository.findById(id).orElse(null);
 	}
+	
 	@PutMapping("/{id}")
-	public Product update(@PathVariable("id") Long id, @RequestBody Product product ) throws NotFoundException {
+	public Product update(@PathVariable("id") Long id, @RequestBody @Valid Product product ) throws NotFoundException {
 		
 		productRepository.findById(id).orElseThrow(NotFoundException::new);		
 		product.setId(id);
