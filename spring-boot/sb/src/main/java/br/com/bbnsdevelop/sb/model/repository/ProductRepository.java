@@ -7,5 +7,6 @@ import br.com.bbnsdevelop.sb.model.entities.Product;
 
 @Repository
 public interface ProductRepository extends PagingAndSortingRepository<Product, Long>{
+	Product findByName(String name);
 
 }

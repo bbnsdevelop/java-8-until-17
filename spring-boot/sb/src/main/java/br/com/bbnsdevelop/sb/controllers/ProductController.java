@@ -44,6 +44,7 @@ public class ProductController {
 		return products;
 	}
 	
+	
 	@GetMapping("/page")
 	public Iterable<Product> getProducts(@RequestParam("number") Integer number, @RequestParam("quantity") Integer quantity ){
 		quantity = quantity > MAX_ITEM ? MAX_ITEM : quantity;
@@ -56,6 +57,12 @@ public class ProductController {
 	public Product getById(@PathVariable("id") Long id ) {
 		return productRepository.findById(id).orElse(null);
 	}
+	
+	@GetMapping("/name/{name}")
+	public Product getByName(@PathVariable("name") String name) {
+		return productRepository.findByName(name);
+	}
+	
 	
 	@PutMapping("/{id}")
 	public Product update(@PathVariable("id") Long id, @RequestBody @Valid Product product ) throws NotFoundException {
