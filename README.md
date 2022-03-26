@@ -1,7 +1,6 @@
 # java-8-until-17
 ![image](https://user-images.githubusercontent.com/36892558/147249337-2866dbe0-a11b-40c4-baac-f7376885215c.png)
 
-
 updating my knowledge/Skill in Java 8 until 17.
 
 Since the release of version 8, up to version 17, Java is shaped by 194 JDK Enhancement Proposals (JEPs), each of which brings some improvement to the platform. This page is a categorized and curated list of the most important improvements.
