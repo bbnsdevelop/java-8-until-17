@@ -11,7 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,14 +35,10 @@ public class Company implements Serializable{
 	
 	@Column(name = "name")
 	private String name;
+
 	
-	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-	@JoinTable(name = "tb_company_product",
-		joinColumns = @JoinColumn(name="company_id", referencedColumnName = "company_id"),
-		inverseJoinColumns = @JoinColumn(name="product_id", referencedColumnName = "product_id")
-	)
+	@Transient
 	private List<Produ> products;
 	
-
+		
 }

@@ -3,16 +3,11 @@ package br.com.bbnsdevelop.sb.model.entities;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.Transient;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,12 +29,9 @@ public class Produ implements Serializable{
 	
 	@Column(name = "description")
 	private String description;
+		
 	
-	@OneToMany(mappedBy ="product", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@Transient	
 	private List<Phone> phones;
 	
-	@JsonIgnore
-	@ManyToMany(mappedBy = "products")
-	private List<Company> companies;
-
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.bbnsdevelop.sb.model.entities.Company;
-import br.com.bbnsdevelop.sb.model.repository.CompanyRepository;
+import br.com.bbnsdevelop.sb.services.CompanyService;
 
 @RestController
 @RequestMapping("/api/companies")
@@ -18,12 +18,12 @@ public class CompanyController {
 	
 	
 	@Autowired
-	private CompanyRepository companyRepository;
+	private CompanyService service;
 	
 	@GetMapping
 	public ResponseEntity<List<Company>> getAll(){
 		
-		List<Company> list = companyRepository.findAll();
+		List<Company> list = service.findAll();
 		return ResponseEntity.status(HttpStatus.OK).body(list);
 	}
 

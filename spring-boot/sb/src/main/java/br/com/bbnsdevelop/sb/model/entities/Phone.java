@@ -45,8 +45,9 @@ public class Phone implements Serializable{
 	
 	
 	@JsonIgnore
-	@ManyToOne(optional = true, fetch = FetchType.EAGER)
+	@ManyToOne	
 	@JoinColumn(name ="product_id", referencedColumnName = "product_id")
 	private Produ product;
+	
 
 }
