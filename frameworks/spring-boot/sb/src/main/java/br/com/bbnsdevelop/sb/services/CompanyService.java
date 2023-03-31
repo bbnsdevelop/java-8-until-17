@@ -35,7 +35,8 @@ public class CompanyService {
 	public List<Company> findAll(){
 		
 		List<Company> response = new ArrayList<>();		
-		List<Company> companies = companyRepository.findAll();		
+		List<Company> companies = companyRepository.findAll();
+		
 		companies.forEach(c ->{
 			Company company = new Company() ;
 			company.setId(c.getId());
