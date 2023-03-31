@@ -686,16 +686,18 @@ public class StreamDemo{
         orderBook.add(buyApple); 
         orderBook.add(sellApple); orderBook.add(buyGS); 
         
-        Stream<Order> stream = orderBook.stream(); Stream buyOrders = stream .filter((Order o) -> o.side().equals(Order.Side.BUY)); 
+        Stream<Order> stream = orderBook.stream(); 
+    
+        Stream buyOrders = stream.filter((Order o) -> o.side().equals(Order.Side.BUY)); 
         System.out.println("No of Buy Order Placed :" + buyOrders.count());
         
-        Stream<Order> sellOrders = orderBook .stream() .filter((Order o) -> o.side() == Order.Side.SELL); 
+        Stream<Order> sellOrders = orderBook.stream().filter((Order o) -> o.side() == Order.Side.SELL); 
         System.out.println("No of Sell Order Placed : " + sellOrders.count());
 
-        double value = orderBook.stream() .mapToDouble((Order o) -> o.price()) .sum();
+        double value = orderBook.stream().mapToDouble((Order o) -> o.price()).sum();
         System.out.println("Total value of all orders : " + value);
 
-        long quantity = orderBook.stream() .mapToLong((Order o) -> o.quantity()) .sum(); 
+        long quantity = orderBook.stream().mapToLong((Order o) -> o.quantity()).sum(); 
         System.out.println("Total quantity of all orders : " + quantity);
 
         
