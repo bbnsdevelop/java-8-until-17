@@ -572,6 +572,7 @@ Some of the important Java 8 features are;
 * forEach() method in Iterable interface
 * default and static methods in Interfaces
 * Functional Interfaces and Lambda Expressions
+* Optional
 * Java Stream API for Bulk Data Operations on Collections
 * Java Time API
 * Collection API improvements
@@ -598,3 +599,151 @@ public class Java8ForEachExample {
 } 
 
 ```
+* default and static methods in Interfaces
+
+```ruby
+public interface DefaultStaticExampleInterface {
+   default void show() {
+      System.out.println("In Java 8- default method - DefaultStaticExampleInterface");
+   }
+   static void display() {
+      System.out.println("In DefaultStaticExampleInterface I");
+   }
+}
+public class DefaultStaticExampleClass implements DefaultStaticExampleInterface {
+}
+public class Main {
+   static void main(String args[]) {
+      // Call interface static method on Interface
+      DefaultStaticExampleInterface.display();
+      DefaultStaticExampleClass defaultStaticExampleClass = new DefaultStaticExampleClass();
+     
+      // Call default method on Class
+      defaultStaticExampleClass.show();
+   }
+}
+```
+
+* Functional Interfaces and Lambda Expressions
+```ruby
+@FunctionalInterface
+interface Converter
+{
+   double convert(double input);
+}
+
+public class LambdaDemo
+{
+   public static void main(String[] args)
+   {
+      // Convert Fahrenheit to Celsius
+      System.out.println(convert(input -> (input-32)*5.0/9.0, 98.6));
+
+      // Convert Kilometers to Miles
+      System.out.println(convert(input -> input/1.609344, 8));
+   }
+
+   static double convert(Converter converter, double input)
+   {
+      return converter.convert(input);
+   }
+}
+
+```
+
+* Optional
+```ruby
+import java.util.Optional;  
+public class OptionalExample {  
+    public static void main(String[] args) {  
+        String[] str = new String[10];  
+        Optional<String> checkNull = Optional.ofNullable(str[5]);  
+        if(checkNull.isPresent()){  // check for value is present or not  
+            String lowercaseString = str[5].toLowerCase();  
+            System.out.print(lowercaseString);  
+        }else  
+            System.out.println("string value is not present");  
+    }  
+}  
+```
+
+* Java Stream API for Bulk Data Operations on Collections
+```ruby
+import java.util.ArrayList; 
+import java.util.List; 
+import java.util.stream.Stream; 
+
+public class StreamDemo{ 
+    public static void main(String args[]) { 
+        // Initialization of Collection 
+        List<Order> orderBook = new ArrayList<>(); 
+        Order buyGoogle = new Order("GOOG.NS", 300, 900.30, Order.Side.BUY); 
+        Order sellGoogle = new Order("GOOG.NS", 600, 890.30, Order.Side.SELL); 
+        Order buyApple = new Order("APPL.NS", 400, 552, Order.Side.BUY); 
+        Order sellApple = new Order("APPL.NS", 200, 550, Order.Side.SELL); 
+        Order buyGS = new Order("GS.NS", 300, 130, Order.Side.BUY); 
+        orderBook.add(buyGoogle); orderBook.add(sellGoogle); 
+        orderBook.add(buyApple); 
+        orderBook.add(sellApple); orderBook.add(buyGS); 
+        
+        Stream<Order> stream = orderBook.stream(); Stream buyOrders = stream .filter((Order o) -> o.side().equals(Order.Side.BUY)); 
+        System.out.println("No of Buy Order Placed :" + buyOrders.count());
+        
+        Stream<Order> sellOrders = orderBook .stream() .filter((Order o) -> o.side() == Order.Side.SELL); 
+        System.out.println("No of Sell Order Placed : " + sellOrders.count());
+
+        double value = orderBook.stream() .mapToDouble((Order o) -> o.price()) .sum();
+        System.out.println("Total value of all orders : " + value);
+
+        long quantity = orderBook.stream() .mapToLong((Order o) -> o.quantity()) .sum(); 
+        System.out.println("Total quantity of all orders : " + quantity);
+
+        
+    } 
+
+    
+}
+
+class Order {
+    enum Side {
+        BUY, SELL;
+    } 
+    private final String symbol; 
+    private final int quantity; 
+    private double price; 
+    private final Side side; 
+
+    public Order(String symbol, int quantity, double price, Side side) { 
+        this.symbol = symbol; 
+        this.quantity = quantity; 
+        this.price = price; 
+        this.side = side; 
+    } 
+    public double price() {
+         return price; 
+    } 
+    public void price(double price) { 
+        this.price = price; 
+    } 
+    public String symbol() { 
+        return symbol; 
+    } 
+    public int quantity() {
+         return quantity; 
+    } 
+    public Side side() { 
+        return side; 
+    }
+
+
+}
+Output: 
+No of Buy Order Placed :3 
+No of Sell Order Placed : 2 
+Total value of all orders : 3022.6 
+Total quantity of all orders : 1800
+
+```
+
+
+
